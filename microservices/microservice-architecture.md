@@ -10,19 +10,19 @@ Architecture that structures the application as a set of loosely coupled, collab
 	* Deploy their service without having to coordinate with other teams
 * Capable of being developed by a small team
 	* high productivity 
-	* Avoids high communication head of large teams
+	* Avoids high cocmmunication head of large teams
 
 ## Patterns
-* [API decomposition](api-decomposition)
-* [CQRS](cqrs)
-* [Event Sourcing](event-sourcing)
+* [API decomposition](api-composition.md)
+* [CQRS](cqrs.md)
+* [Event Sourcing](event-sourcing.md)
 * [Gateway](api-gateway.md)
-*  [Saga](saga)
-*  [Transactional Outbox](transactional-outbox)
+* [Saga](saga.md)
+* [Transactional Outbox](transactional-outbox.md)
 
 ## Anti-patterns
 * [Chaty I/O](chatty-io)
-*  [Extraneous Fetching](extraneous-fetching)
+* [Extraneous Fetching](extraneous-fetching)
 <hr>
 
 ## Sources

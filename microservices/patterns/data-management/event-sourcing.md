@@ -1,3 +1,5 @@
+#microservices/patterns/data-management 
+
 # Event sourcing
 * Persists the state of a business entity as a sequence of state-changing events.
 * Whenever the state of a business entity changes, a new event is appended to the list of events. 

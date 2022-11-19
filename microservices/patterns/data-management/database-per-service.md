@@ -1,3 +1,5 @@
+#microservices/patterns/data-management 
+
 # Database per service
 * Each Microservice should have its own database
 	* As microservices are independently deployable, this is crucial to ensure that there are no dependencies to other services

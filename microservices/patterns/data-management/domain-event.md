@@ -1,5 +1,6 @@
+#microservices/patterns/data-management #domain-driven-design
+
 # Domain Event
-From [Domain Driven Design](domain-driven-design) 
 * A domain event should be used to propagate state changes across multiple aggregates within the same domain model.
 * It is an event that happens withing a specific domain.
 	* Other processes should know of this domain.

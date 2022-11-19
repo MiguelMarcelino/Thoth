@@ -1,3 +1,5 @@
+#domain-driven-design
+
 # Domain Driven Design
 * Approach to software development that centers the development on programming a domain model that has a rich understanding of the processes and rules of a domain (definition from Eric Evans).
 * Idea: software systems need to be based on a well-developed model of a domain

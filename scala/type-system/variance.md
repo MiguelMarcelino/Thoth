@@ -1,5 +1,3 @@
-#scala/type-system 
-
 # Variance
 Scala supports invariant, covariant and contravariant types. Here is an example from the documentation:
  
@@ -36,3 +34,8 @@ trait Consumer[-T]:
 
 ## Sources
 - https://docs.scala-lang.org/scala3/book/types-variance.html#inner-main
+
+<hr>
+
+Related to:
+* [type-system](type-system)

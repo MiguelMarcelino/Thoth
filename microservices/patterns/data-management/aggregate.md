@@ -1,5 +1,3 @@
-#microservices/patterns/data-management #domain-driven-design
-
 # Aggregate
 A graph of objects that can be treated as a unit
 * One of its component objects will be the aggregate root
@@ -13,3 +11,8 @@ A graph of objects that can be treated as a unit
 ## Sources
 * https://microservices.io/patterns/data/aggregate.html
 * https://www.martinfowler.com/bliki/DDD_Aggregate.html
+
+
+<hr>
+
+Related to: [data-management](data-management.md), [domain-driven-design](domain-driven-design)

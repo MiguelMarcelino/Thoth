@@ -1,6 +1,12 @@
-#microservices/patterns/data-management 
-
-# Database per service
+￼ebab-case for everything. This includes folder, note and tag names.
+ Always include citations for the information you write. This is important not only to allow readers to have access to a more in-depth explanation of content, but also to give credit to the author(s) you are citing from.
+ Lastly, please verify the existing notes, to sebab-case for everything. This includes folder, note and tag names.
+ Always include citations for the information you write. This is important not only to allow readers to have access to a more in-depth explanation of content, but also to give credit to the author(s) you are citing from.
+ Lastly, please verify the existing notes, to s￼ebab-case for everything. This includes folder, note and tag names.
+ Always include citations for the information you write. This is important not only to allow readers to have access to a more in-depth explanation of content, but also to give credit to the author(s) you are citing from.
+ Lastly, please verify the existing notes, to sebab-case for everything. This includes folder, note and tag names.
+ Always include citations for the information you write. This is important not only to allow readers to have access to a more in-depth explanation of content, but also to give credit to the author(s) you are citing from.
+ Lastly, please verify the existing notes, to s# Database per service
 * Each Microservice should have its own database
 	* As microservices are independently deployable, this is crucial to ensure that there are no dependencies to other services
 * Loose coupling allows for finer-grained control over scalability
@@ -13,3 +19,8 @@ Disadvantages
 
 ## Sources
 * https://microservices.io/patterns/data/database-per-service.html
+
+
+<hr>
+
+Related to: [data-management](data-management.md)

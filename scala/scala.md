@@ -1,6 +1,4 @@
-#scala 
-
-# Scala Basics
+# Scala Language
 
 * Scala comes from the word *scalable*
 * Combines Object-Oriented (OO) and Functional programming (FP/OOP fusion)

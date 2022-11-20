@@ -1,5 +1,3 @@
-#microservices/anti-patterns
-
 # Chatty I/O Antipattern
 * Network calls and other I/O operations are inherently slow compared to compute tasks.
 * The cumulative effect of a large number of I/O requests can have a significant impact on performance and responsiveness.
@@ -16,3 +14,8 @@ Considerations:
 
 ## Sources
 * https://learn.microsoft.com/en-us/azure/architecture/antipatterns/chatty-io/
+
+
+<hr>
+
+Related to: [anti-patterns](anti-patterns),

@@ -1,5 +1,3 @@
-#scala/type-system 
-
 # Polimorphic Methods
 * Polimorphic methods are parametric, which implies that one method definition can be used with different types.
 
@@ -7,3 +5,8 @@
 
 ## Sources
 * https://docs.scala-lang.org/tour/polymorphic-methods.html#inner-main
+
+<hr>
+
+Related to:
+* [type-system](type-system)

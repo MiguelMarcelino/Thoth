@@ -1,5 +1,3 @@
-#scala/scala-basics
-
 # Variables and Data Types
 Scala has two types of variables:
 * `val`: Creates an immutable variable
@@ -18,4 +16,13 @@ Scala has two types of variables:
 * String interpolation is supported as well with the syntax `"This is $interpolation"`, where variables are prefixed with `$`
 
 
+<hr>
+
+## Sources
+- https://docs.scala-lang.org/scala3/book/taste-vars-data-types.html#inner-main
+
+<hr>
+
+Related to:
+* [scala-basics](scala-basics.md)
 

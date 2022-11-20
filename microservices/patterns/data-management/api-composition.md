@@ -1,5 +1,3 @@
-#microservices/patterns/data-management 
-
 # API Composition
 
 <div align="center">
@@ -18,3 +16,8 @@
 
 ## Sources
 * https://microservices.io/patterns/data/api-composition.html
+
+
+<hr>
+
+Related to: [data-management](data-management.md)

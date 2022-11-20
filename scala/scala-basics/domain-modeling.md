@@ -1,5 +1,3 @@
-#scala/scala-basics
-
 # Domain Modeling
 The OOP part of Scala
 
@@ -63,3 +61,13 @@ As the `Succ` case has parameters, this is called a sum type. In this case it is
 * `equals` and `hashCode` methods are generated.
 * `toString` method is generated.
 
+
+<hr>
+
+## Sources
+- https://docs.scala-lang.org/scala3/book/taste-modeling.html#inner-main
+
+<hr>
+
+Related to:
+* [scala-basics](scala-basics.md)

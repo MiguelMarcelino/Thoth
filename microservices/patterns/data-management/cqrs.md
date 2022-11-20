@@ -1,5 +1,3 @@
-#microservices/patterns/data-management 
-
 # Command Query Responsability Segregation (CQRS)
 * Focuses on the problem of retrieving data from multiple services
 * The solution is to define a read-only replica that is designed to support that query.
@@ -15,3 +13,7 @@ In this case, there are several services that own the data. This data is publish
 
 ## Sources
 * https://microservices.io/patterns/data/cqrs.html
+
+<hr>
+
+Related to: [data-management](data-management)

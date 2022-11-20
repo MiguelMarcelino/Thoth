@@ -1,5 +1,3 @@
-#microservices/anti-patterns 
-
 # Extraneous Fetching
 
 * More than needed data is retrieved for a business operation, often resulting in unnecessary I/O overhead and reduced responsiveness.
@@ -15,3 +13,7 @@ Considerations:
 
 ## Sources
 * https://learn.microsoft.com/en-us/azure/architecture/antipatterns/extraneous-fetching/
+
+<hr>
+
+Related to: [anti-patterns](anti-patterns),

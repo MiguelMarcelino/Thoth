@@ -1,5 +1,3 @@
-#microservices/patterns/external-api 
-
 # API Gateway
 * Deals with the problem of how clients access the individual Microservices
 * It is the single entry point for all clients
@@ -12,3 +10,8 @@
 
 ## Sources
 * https://microservices.io/patterns/apigateway.html
+
+
+<hr>
+
+Related to: [external-api](external-api)

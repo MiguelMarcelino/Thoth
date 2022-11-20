@@ -1,5 +1,3 @@
-#scala/contextual-abstractions
-
 # Given and Using
 The following features are used for contextual abstraction:
 * Given Instances define terms that can be used by the Scala compiler to fill in missing arguments
@@ -49,3 +47,8 @@ We can now replace the last call from the first example from `renderWebsite("/ho
 
 ## Sources
 - https://docs.scala-lang.org/scala3/book/ca-given-using-clauses.html
+
+
+<hr>
+
+Related to: [contextual-abstractions](contextual-abstractions)

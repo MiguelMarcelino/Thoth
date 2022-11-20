@@ -1,6 +1,4 @@
-#scala/type-system
-
-# Dispatch
+# Dispatch Methods in Scala require the use of type hints (it is very hard to infer the types of functions)
 
 ## Dispatch overview
 A generic overview of dispatch:
@@ -46,3 +44,9 @@ List(
 * https://www.youtube.com/watch?v=kc9HwsxE1OY
 * https://docs.scala-lang.org/overviews/compiler-options/optimizer.html#motivation (only contains a partial description)
 * https://users.scala-lang.org/t/dynamic-dispatch-on-object-but-static-dispatch-on-arguments-sometimes/5350
+
+
+<hr>
+
+Related to:
+* [type-system](type-system)

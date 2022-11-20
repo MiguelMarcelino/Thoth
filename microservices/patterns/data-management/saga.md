@@ -1,5 +1,3 @@
-#microservices/patterns/data-management 
-
 # Saga
 * Business transaction that spans multiple services
 * It is a sequence of local transactions, where each local transaction updates the database and publishes a message or event to trigger the next local transaction in the saga.
@@ -27,3 +25,7 @@ In the second mode, the OrderService starts by receiving a request with a new or
 
 ## Sources
 * https://microservices.io/patterns/data/saga.html
+
+<hr>
+
+Related to: [data-management](data-management)

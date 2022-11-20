@@ -1,5 +1,3 @@
-#microservices/patterns/data-management #domain-driven-design
-
 # Domain Event
 * A domain event should be used to propagate state changes across multiple aggregates within the same domain model.
 * It is an event that happens withing a specific domain.
@@ -14,3 +12,7 @@
 
 ## Sources
 * https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation
+
+<hr>
+
+Related to: [data-management](data-management.md), [domain-driven-design](domain-driven-design)

@@ -1,4 +1,3 @@
-#scala/oop
 
 # Traits
 * Traits are used to share interfaces and fields between classes. 
@@ -19,3 +18,7 @@ class Dog(val name: String) extends Pet
 
 ## Sources
 - https://docs.scala-lang.org/tour/traits.html#inner-main
+
+<hr>
+
+Related to: [oop](oop)

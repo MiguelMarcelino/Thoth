@@ -1,5 +1,3 @@
-#microservices 
-
 # Microservice Architecture
 Architecture that structures the application as a set of loosely coupled, collaborating services. This approach corresponds to the Y-axis of the [scale-cube](scale-cube.md). Each service is:
 * Highly maintainable and testable

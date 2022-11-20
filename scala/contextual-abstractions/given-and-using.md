@@ -51,4 +51,4 @@ We can now replace the last call from the first example from `renderWebsite("/ho
 
 <hr>
 
-Related to: [contextual-abstractions](contextual-abstractions)
+Related to: [contextual-abstractions](scala/contextual-abstractions/contextual-abstractions.md)

@@ -24,4 +24,4 @@ case class Dog(name: String) derives CanEqual
 
 <hr>
 
-Related to: [contextual-abstractions](contextual-abstractions.md)
+Related to: [contextual-abstractions](scala/contextual-abstractions/contextual-abstractions.md)

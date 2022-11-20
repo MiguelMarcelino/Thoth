@@ -15,10 +15,10 @@
 	* Memory management
 	* Portability and platform independence
 	* Benefit from existing Java and JVM libraries
+* Top level allows any expressions and statements. This is opposed to Java, which requires the contents of each file to be wrapped within a class.
 * Statically Typed
 	* Included Type inference mechanism, which reduces the amount of types necessary at compile-time
 * Optimized for parallel operations
 	* Partially inspired on Erlang (Built for scalable software)
 * Can run in the browser using Scala.js
 	* This offers an alternative to JavaScript, with the benefit of strong typing
-

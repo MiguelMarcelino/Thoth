@@ -1,9 +1,10 @@
+# Scale Cube
+
 <div align="center">
 	<img src="https://miro.medium.com/max/732/1*0DpDxw5yaA6eFqiIk2gFkw.png" style="height: 200pt;">
 </div>
 
 ## X-axis scaling
-
 * Consists of running multiple copies of an application behind a load balancer. 
 * With N copies, each copy handles 1/N of the load.
 
@@ -13,7 +14,6 @@
 
 
 ## Y-axis scaling
-
 * splits the application into multiple services. 
 * Each service deals with one or more closely related functions. 
 * Decomposition (approaches can be combined):
@@ -22,7 +22,6 @@
 
 
 ## Z-axis scaling
-
 * Each server runs an identical copy of the code. 
 * Difference to X-Axis Scaling: Each server is responsible for only a subset of the data.
 * Z-axis splits are commonly used to scale databases (a.k.a. sharded data)
@@ -44,3 +43,8 @@
 
 ## Sources
 * https://microservices.io/articles/scalecube.html
+
+
+<hr>
+
+Related to: [microservices](microservices)

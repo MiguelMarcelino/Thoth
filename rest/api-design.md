@@ -1,4 +1,3 @@
-
 # API Design
 
 ## Organize API arround resources
@@ -94,3 +93,8 @@ Versioning Types:
 
 ## Sources
 - [https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+
+
+<hr>
+
+Related to: [rest](rest)

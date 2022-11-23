@@ -7,5 +7,5 @@
 
 <hr>
 
-Related to: [monitoring](monitoring)
+Related to: [monitoring](cloud/monitoring/monitoring.md)
 Tags: #todo

@@ -23,7 +23,7 @@
 * Reactive programming techniques associated:
 	* `onError` in reactive streams
 	* Throwing exceptions in observables 
-	* Communicate occurrence but not nature of failure (encapsulate failure), just like in [actor model](actor-model)
+	* Communicate occurrence but not nature of failure (encapsulate failure), just like in [actor model](actor-model.md)
 
 ## Assert Autonomy
 * Design components that act independently and interact collaboratively
@@ -37,7 +37,7 @@
 * Consistency guarantees the correctness and integrity of an application and user’s data.
 * Convergence in distributed systems: the system is always in the process of convergence but never manages to fully “catch up” and reach a final state of convergence (on a global system scale). 
 	* Define *units of consistency*: small islands of strong consistency
-* Design systems for [eventual consistency](eventual-consistency) new tab or [causal consistency](causal-consistency)
+* Design systems for [eventual consistency](eventual-consistency.md) new tab or [causal consistency](causal-consistency.md)
 
 ## Decouple Time
 * Process asynchronously to avoid coordination and waiting
@@ -65,5 +65,5 @@
 
 <hr>
 
-Related to: [distributed-computing](distributed-computing)
+Related to: [distributed-systems](distributed-systems.md)
 Tags: #todo

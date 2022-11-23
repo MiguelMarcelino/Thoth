@@ -1,6 +1,6 @@
 # Kalix
 * Kalix is a Platform-as-a-Service (PaaS) that combines an **API-first**, **database-less programming model** with a **serverless runtime**.
-* Kalix brings advanced data access patterns like [Event Sourcing](event-sourcing), [CQRS](cqrs), and [CRDTs](conflixt-free-replicated-data-type) without developers having to learn how to implement them.
+* Kalix brings advanced data access patterns like [Event Sourcing](event-sourcing), [CQRS](cqrs), and [CRDTs](conflict-free-replicated-data-type.md) without developers having to learn how to implement them.
 
 ## Database-less
 * Traditional serverless platforms:

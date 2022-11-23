@@ -11,5 +11,5 @@ Data structure that is replicated across multiple computers in a network, with t
 
 <hr>
 
-Related to: [distributed-computing](distributed-computing)
+Related to: [data-structures](data-structures)
 Tags: #info-review

@@ -15,4 +15,4 @@ General example of Systems Manager process flow:
 
 <hr>
 
-Related to: [aws](aws)
+Related to: [aws](aws.md)

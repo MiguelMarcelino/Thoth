@@ -16,3 +16,4 @@ General example of Systems Manager process flow:
 <hr>
 
 Related to: [aws](aws.md)
+Tags: #info-review 

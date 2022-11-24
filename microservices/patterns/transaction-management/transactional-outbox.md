@@ -15,7 +15,7 @@ The problem is that there’s no guarantee that the transaction will commit with
 <hr>
 
 ## Sources
-
+* https://microservices.io/patterns/data/transactional-outbox.html
 
 <hr>
 

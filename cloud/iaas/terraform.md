@@ -63,6 +63,7 @@ COMMAND | DESCRIPTION
 ---
 
 ## Sources
+* Shamelessly copied from Christian Lempa's [cheat sheets](https://github.com/christianlempa/cheat-sheets).
 * [Terraform by HashiCorp](https://www.terraform.io/)
 * [Documentation | Terraform by HashiCorp](https://www.terraform.io/docs)
 * [Terraform Registry](https://registry.terraform.io/)

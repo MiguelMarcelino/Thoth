@@ -57,6 +57,11 @@ COMMAND | DESCRIPTION
 `kubectl cluster-info` | Display endpoint information about the master and services in the cluster
 `kubectl config view` |Get the configuration of the cluster
 
+### Describe commands
+COMMAND | DESCRIPTION
+---|---
+`kubectl describe <resource>` | Describes the state of a resource. 
+
 ### Resource Management
 COMMAND | DESCRIPTION
 ---|---

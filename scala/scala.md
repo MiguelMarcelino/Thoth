@@ -15,6 +15,7 @@
 	* Memory management
 	* Portability and platform independence
 	* Benefit from existing Java and JVM libraries
+* Everything in Scala is an expression
 * Top level allows any expressions and statements. This is opposed to Java, which requires the contents of each file to be wrapped within a class.
 * Statically Typed
 	* Included Type inference mechanism, which reduces the amount of types necessary at compile-time

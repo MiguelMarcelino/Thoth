@@ -2,6 +2,12 @@
 Git is an open source version control system, which supports your development tasks,
 especially in distributed code projects.
 
+## Important Commands
+### Commit amend
+Commit Amend: `git commit --amend --no-edit`
+Commit push: `git push origin <branch> --force-with-lease`
+
+
 ## Configuration
 Git can be configured by the CLI using the `git config` command. For first configuration
 it is necessary to configure at least the parameters `user.name` and `user.email`. This

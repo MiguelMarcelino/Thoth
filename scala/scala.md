@@ -23,3 +23,6 @@
 	* Partially inspired on Erlang (Built for scalable software)
 * Can run in the browser using Scala.js
 	* This offers an alternative to JavaScript, with the benefit of strong typing
+
+## Compiler Optimizations
+* When you compile your Scala code to Java bytecodes, the Scala compiler will use Java’s primitive types where possible to give you the performance benefits of the primitive types.

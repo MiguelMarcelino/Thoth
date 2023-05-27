@@ -1,5 +1,5 @@
 # K3S
-* Lightweight Kubernetes ([[kubernetes]]). 
+* Lightweight Kubernetes ([[cloud/deployment/kubernetes/kubernetes]]). 
 * Production ready, easy to install, half the memory, all in a binary less than 100 MB.
 
 ## Manage K3S
@@ -24,4 +24,4 @@ Stored in `/var/lib/rancher/k3s/server/db/snapshots`.
 
 <hr>
 
-Related to: [kubernetes](kubernetes)
+Related to: [kubernetes](cloud/deployment/kubernetes/kubernetes.md)

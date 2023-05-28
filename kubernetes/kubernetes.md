@@ -184,6 +184,111 @@ spec:
 			  - containerPort: 80
 ```
 
+---
+
+## Namespaces
+4 Default namespaces
+* kube-system
+	* System processes from master and kubectl
+	* This is reserved for kubernetes and cannot be used for deploying applications
+* kube-public
+	* Contains publicly accessible information
+	* Accessible via: kubectl cluster-info
+* kube-node-leads
+	* Contains information about the node's heartbeats
+* default
+	* Created resources are located in this namespace
+
+Example use of namespaces
+![[kubernetes_namespace_example.png]]
+
+Another scenario where multiple namespace are necessary, is in a scenario where multiple teams are working in the same cluster. This way, multiple teams can be deploying different versions of the same application without disrupting each others flow.
+![[kubernetes_namespaces_multipe_teams.png]]
+
+
+Another strategy is called Blue/Green deployment. This allows us to have two deploy a newer version to production much faster and switch to the new deployment when that is ready. This reduces downtime (hence, it increases availability). This avoids having to setup a separate cluster.
+![[kubernetes_blue_green_deployment.png]]
+
+
+Finally, it is also possible to limit the amount of resources per namespace level. This avoids having one team that consumes all the resources, leaving other teams without resource for scheduling new pods.
+![[kubernetes_limit_resources.png]]
+
+
+Things to consider about namespaces
+* Each namespace defines its own ConfigMap
+	* One cannot access resources from other namespaces
+	* Services allow using pods from other namespaces
+* Some components can't be created within namespaces
+	* Volumes are accessible throughout the whole cluster
+	* Nodes are not within a specific namespace
+	* Find these resources using the following command
+		* kubectl api-resources --namespaced=false
+
+
+---
+## Ingress
+* Entrypoint to the cluster
+* Evaluates all the rules
+* Manages redirections
+![[kubernetes_ingress.png]]
+
+The image above also shows a Cloud Load balances, which will be used if Kubernetes is deployed to a cloud provider.
+
+Ingress also allows setting up a TLS connection. This requires us to provide the certificate and key files for authentication and encryption. An important aspect is that the secret component must be in the same namespace as the ingress component. Below is an example config file that supplies a TLS certificate and key file.
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+	name: myapp-secret-tls
+	namespace: default
+data:
+	tls.crt: base64 encoded cert
+	tls.key: base64 encoded key
+type: kubernetes.io/tls
+```
+
+---
+
+## Helm
+* Package manager for kubernetes
+	* Packages yaml files and distributes them in a private/public registry
+* Helm Chart
+	* Bundle of YAML files held by helm repositories
+	* Can be shared in public repositories
+* Templating engine
+	* helm allows creating configuration templates to be used to deploy multiple services
+	* A values file defines a set of values that can be used in template files (accessed wioth `{{.Values.VALUE_NAME}}`)
+* Directory structure consists of 4 main things
+	* `chart.yaml`: Meta information about charts
+	* `values.yaml`: Values for the template files
+	* `charts/`: Folder that contains chart dependencies
+	* `templates/`: Folder that stores template files
+* helm allows overriding the default values for a specific deployment using the following command
+	* helm install --values=new_values.yaml CHART_NAME
+	* The values stored in `new_values.yaml` will override the values stored in `values.yaml`.
+
+
+---
+
+## Stateful vs stateless applications
+### Stateless application
+* Any pod can be deleted/restarted, as it does not store state
+* Pods are interchangeable
+	* They get random hashes
+	* Load balancer can send requests to any of the pods
+
+### Stateful application
+* Pods cannot be deleted randomly and cannot be addressed randomly, as they store state
+* Cannot be created/deleted at the same time
+	* Replica pods are not identical
+* Created from the same specification, but are not identical
+* With stateful pods, there is one pod that writes to the database (called the master). All other pods can only read from the database (called the slaves)
+	* Masters and slaves do not have access to the same physical storage
+	* Slave Pods must be synchronised with master
+	* Stateful set pods get fixed names, where each new pod is assigned an ordinal number in increasing order (e.g mysql-0, mysql-1). The first pod is the master pod.
+	* Pods get deleted in reverse order to their sequence numbers
+
 
 
 ---

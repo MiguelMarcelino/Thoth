@@ -7,7 +7,7 @@ An overview of Scala's type system hierarchy:
 </div>
 
 * The top type is the `Any` type.
-* The `Matchable` type is the subtype of `Any`, and is used to identfy types on which pattern matching can be performed.
+* The `Matchable` type is the subtype of `Any`, and is used to identify types on which pattern matching can be performed.
 
 
 <hr>

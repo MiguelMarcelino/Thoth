@@ -30,6 +30,10 @@ The problem with Faas is that functions are black boxes, which makes it hard to 
 While Faas deals with abstracting over communication, Stateless serverless deals with abstracting over state.
 
 
+## Stateful serverless abstraction
+
+![[stateful_serverless_abstraction.png]]
+
 ---
 ## Sources
 * https://speakerdeck.com/jboner/cloudstate-towards-stateful-serverless?slide=9

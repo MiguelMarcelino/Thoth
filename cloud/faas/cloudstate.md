@@ -16,6 +16,41 @@
 ![[cloudstate-architecture.png]]
 
 
+## Communication
+
+![[cloudstate_communication.png]]
+
+## Akka cluster state management
++ Actor based distributed runtime
++ Decentralized masterless P2P
++ Epidemic gossip, self healing
++ State sharding and routing on Entity key
++ Forwarding of requests
++ Colocation of state and processing
++ Backed by and event log
+	+ This allows things to be replayed in the case of failures
++ Automatic Failover, Rehydration and Rebalancing
++ Highly scalable
+
+## Benefits of Event sourcing
++ One single source of truth with all history
++ Durable in-memory state
++ Avoids object relational mismatch
++ Allows entities to subscribe to state changes
++ Follows single writer principle
+
+## Conflict-free Replicated Data Types (CRDTs)
+* Strong eventual consistency
+* Replicated and Decentralised
+* Highly available and scalable
+* Data types contain resolution logic
+* Always converge correctly
+
+CRDTs properties
++ Associative (Batch insensitive; grouping does not matter) -> a+(b+c)=(a+b)+c
++ Commutative (Order insensitive) -> a+b=b+a
++ Idempotent (Retransmission insensitive) -> a+a=a
+
 ---
 ## Sources
 * https://speakerdeck.com/jboner/cloudstate-towards-stateful-serverless?slide=9

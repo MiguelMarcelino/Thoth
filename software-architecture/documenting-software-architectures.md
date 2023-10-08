@@ -164,6 +164,20 @@ Sections
 TBC
 
 
+---
+
+## Architecture Documentation
+
+* Write for the reader --> How will documentation be read and used
+* YAGNI ("You ain't gonna need it") --> One should only implement and document something when there is the need for it
+* Document views only if it addresses the concerns of an important stakeholder
+	* Produce documentation in stages (follow the needs of stakeholders)
+* Document what is necessary to maintainers, so that they understand the system
+	* Document the minimum amount needed to make progress
+
+
 <hr>
 
-Related to: [software-architecture](software-architecture)
+Related to: 
+- [software-architecture](software-architecture)
+- [agile](agile)

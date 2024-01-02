@@ -11,4 +11,4 @@ https://martinfowler.com/bliki/UbiquitousLanguage.html
 
 <hr>
 
-Related to: [domain-driven-design](domain-driven-design)
+Related to: [domain-driven-design](domain-driven-design.md)

@@ -95,7 +95,7 @@ A combinator is a λ-term with no free variables. There are many combinators tha
 | F    | `λx[λy[y]]`                                      | Truth value `false`                                                                                                                                                                                                                                         |
 | ω    | `λx[xx]`                                         | Self-application combinator                                                                                                                                                                                                                                 |
 | Ω    | ωω (`λx[xx]λx[xx]`)                              | Self-application of the self-application combinator. Reduces to itself.<br>This is how recursion is defined. When passing `λx[xx]` to itself, it will apply that function twice. Since `x = λx[xx]`, we are essentially always repeating the term `λx[xx]`. |
-| Y    | `λf[(λx[f(xx)])(λx[f(xx)]𝜆𝑓[(𝜆𝑥[𝑓(𝑥𝑥)])]` | The y combinator.  For every λ𝜆-term X𝑋, we have:<br>YX ⊳ `(λx[X(xx)])(λx[X(xx)])`<br>      ⊳ `X((λx[X(xx)])(λx[X(xx)])`<br><br>The terms YX and X(YX) reduce to a common term.                                                                           |
+| Y    | `λf[(λx[f(xx)])(λx[f(xx)]𝜆𝑓[(𝜆𝑥[𝑓(𝑥𝑥)])]` | The y combinator.  For every λ-term X, we have:<br>YX ⊳ `(λx[X(xx)])(λx[X(xx)])`<br>      ⊳ `X((λx[X(xx)])(λx[X(xx)])`<br><br>The terms YX and X(YX) reduce to a common term.                                                                               |
 | Θ    | `(λx[λf[f(xxf)]])(λx[λf[f(xxf)]]`                | Turing’s fixed-point combinator. For every λ-term X, ΘX reduces to X(ΘX)                                                                                                                                                                                    |
 
 ### Notations
@@ -108,6 +108,50 @@ A combinator is a λ-term with no free variables. There are many combinators tha
 | `M[x:=A]` | The λ-term that is obtained by substituting the λ-term A for all free occurrences of x inside M.<br>For example, suppose M is `λx[x+y]`, and A is z. When we perform the substitution `M[x:=A]`, we replace all occurrences of x with A, so `M[x:=A]` would become `λx[z+y]`. |
 | M≡N       | The λ𝜆-terms M and N are identical: understood as sequences of symbols, M and N have the same length and corresponding symbols of the sequences are identical.                                                                                                               |
 
+## How is it valuable in computer science?
+
+From a definition from [StackOverflow](https://stackoverflow.com/questions/93526/what-is-a-y-combinator/94056#94056):
+> A Y-combinator is a "functional" (a function that operates on other functions) that enables recursion, <u>when you can't refer to the function from within itself (?)</u>. In computer-science theory, it generalizes recursion, abstracting its implementation, and thereby <u>separating it from the actual work of the function in question (?)</u>. The benefit of not needing a compile-time name for the recursive function is sort of a bonus.
+
+This is a typical scenario for lambda functions, as they cannot call themselves by name. Assigning a lambda function to a variable is a brittle solution, as the variable can be reassigned (in the case of Scala, using `val` would make this at least look a little better, but it is still not a permanent solution). To try to understand how the Y-Combinator works, let us use the factorial function as an example:
+
+```c 
+x == 0 ? 1: x * func(x - 1);
+```
+
+Consider that function `func` will do exactly the same thing as the lambda expression. Now we can go one step further and turn this into a function that receives another function to call.
+
+```c
+// A function that creates a factorial, but only if you pass in
+// a function that does what the inner function is doing.
+Func<Func<Double, Double>, Func<Double, Double>> fact =
+  (recurs) =>
+    (x) =>
+      x == 0 ? 1 : x * recurs(x - 1);
+```
+
+This function takes a function as an argument and returns another function as its result. Notice, however, that it does not call itself. It calls the argument (x) passed into the outer function. To make this factorial, we need to pass the inner function (`recurs`) to itself, which is done when we call the second inner function with the argument `x`.
+
+Putting this all together, we have the following:
+
+```c
+// One-argument Y-Combinator.
+public static Func<T, TResult> Y<T, TResult>(Func<Func<T, TResult>, Func<T, TResult>> F)
+{
+  return
+    t =>  // A function that...
+      F(  // Calls the factorial creator, passing in...
+        Y(F)  // The result of this same Y-combinator function call...
+              // (Here is where the recursion is introduced.)
+      )
+      (t); // And passes the argument into the work function.
+}
+```
+
+This last sentence on StackOverflow explains it well:
+> Rather than the factorial calling itself, what happens is that the factorial calls the factorial generator (returned by the recursive call to Y-Combinator). And depending on the current value of t the function returned from the generator will either call the generator again, with t - 1, or just return 1, terminating the recursion.
+
+And this is where the definition of Y-combinator comes from: A function whose output is another function.
 
 ---
 # Sources

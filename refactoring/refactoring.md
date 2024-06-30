@@ -34,8 +34,23 @@ Or for those who like baseball: Three strikes, and you refactor.
 	- If the code is in the same class, then extracting it into one function is enough
 	- If it is in different subclasses, then pulling it up to the base class and creating a common function is a possible solution
 
+## Long parameter lists
+- When creating functions, we are commonly told to pass all required data as parameters
+	- The alternative would be to rely on global data, which has many downsides (e.g. one of the more prominent ones is making things harder to test)
+- When considering whether to add a new parameter to a function, always consider whether it is better to pass an object that encapsulates all required parameters
+	- This is especially useful if the function we are developing will require many changes in the future.
+	- We can avoid a large refactoring by just passing an object (sometimes called a context) to functions
+
+## Polymorphism instead of conditional statements
+- There are often times where repeated switch statements are used throughout the code to implement logic.
+	- This becomes a problem when we want to add new clauses to the conditional statement, as we need to find all the positions in the code and change them
+- The solution is to instead rely on polymorphism and replace conditional statements
+	- For instance, instead of having a switch-case statement that returns some value for a given parameter, have subclasses that each extend a method from the base class (or interface) to return the required value.
+
 # Some nice quotes
 - _"For each desired change, make the change easy (warning: this may be hard) then make the easy change"_ - Kent Beck
+- _"The difference between a poison and something benign is the dose"_ - Paracelsus maxim
+	- Meaning in the book: It was used to explain how global data can actually make your code worse. You can get away with small doses of global data, but it gets exponentially harder to deal with the more you have.
 
 
 

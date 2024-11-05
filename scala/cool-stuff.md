@@ -1,5 +1,5 @@
 # Cool Scala stuff
-This note contains a list of really cool stuff I might waht to use in the future. Here we gooooooo.
+This note contains a list of really cool stuff I might want to use in the future. Here we go!
 
 * Anonymous functions can be done with the following syntax: `(x: Int, y: Int) => x + y`
 * Although it is not very common, you can indeed do loops in Scala:
@@ -24,7 +24,7 @@ val thrill = "Will" :: "fill" :: "until" :: Nil // New list with elements: ["Wil
 	* A class and its companion object can access each other’s private members.
 	* An image to help you rember what *companion* means:
 		* <img src="https://www.akc.org/wp-content/uploads/2017/11/Portuguese-Podengo-standing-in-three-quarter-view.jpg" width="30%">
-* Au contraire to Java, in Scala one can create an application's entry point with a singletone object that has a `main` method inside:
+* Au contraire to Java, in Scala one can create an application's entry point with a singleton object that has a `main` method inside:
 ```Scala
 object Something { 
 	def main(args: Array[String]) { 

@@ -26,3 +26,12 @@ Human: {
 ```
 
 GraphQL will wait for all these promises concurrently before continuing.
+
+
+---
+# Sources
+- https://graphql.org/learn/
+
+---
+
+Related to: [graph-ql](graph-ql)

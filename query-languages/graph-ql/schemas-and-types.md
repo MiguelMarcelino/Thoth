@@ -76,3 +76,10 @@ We can use an input type as follows (we omit the variables for brevity):
 
 The fields on an input object type can themselves refer to input object types, but ==you can’t mix input and output types in your schema. Input object types also can’t have arguments on their fields==.
 
+---
+# Sources
+- https://graphql.org/learn/
+
+---
+
+Related to: [graph-ql](graph-ql)

@@ -93,12 +93,10 @@ Read more about cancellation on the [IO Cancellation](io-cancellation) document
 
 ### Markers
 
-`IO.start` and `IO.cancel`
-TODO
+`IO.start` and `IO.cancel` are equivalent to doing a thread fork and interrupt operations. However, the IO operations return a Fiber, which is a lightweight thread that (similarly to normal threads) can be joined or interrupted.
 
 
-`IO.runCancelable` & `IO.unsafeRunCancelable` 
-TODO
+`IO.runCancelable` & `IO.unsafeRunCancelable` allow us to interrupt tasks (in both safe and unsafe way).
 
 `IO.uncancelable` returns an IO that cannot be cancelled. A good use-case for this is when we want to ensure that a computation is atomic, that is, either all of it executes, or none of it. Cancellable IO's are not atomic.
 Below is an example:

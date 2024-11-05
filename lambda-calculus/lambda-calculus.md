@@ -3,7 +3,7 @@
 ## Introduction
 - Works with applications of functions to arguments
 - Example
-	- Consider the following polinomial: `x^2−2⋅x+5`
+	- Consider the following polynomial: `x^2−2⋅x+5`
 	- In lambda calculus, one would represent it as follows: `λx[x^2−2⋅x+5]`
 	- The λ operator allows us to abstract over x (it binds the variable to the expression)
 - Central principle of lambda calculus is 𝛽-reduction (or 𝛽-conversion). 

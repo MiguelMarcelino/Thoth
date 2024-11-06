@@ -16,7 +16,7 @@ The main advantage of fibers, is that a program can spawn thousands of fibers wi
 	- In cats-effect 3, they are suspended every n `flatMap`s.
 - Cats-effect provides semantic blocking over asynchronous operations
 	- Operations, such as `IO.sleep`, are not blocking operations (although they feel like blocking operations.)
-	- When something is Thread-blocking, it gets moved to another threadpool
+	- When something is Thread-blocking, it gets moved to another thread pool
 
 
 TODO: Watch video

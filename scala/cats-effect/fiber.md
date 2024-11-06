@@ -18,8 +18,72 @@ The main advantage of fibers, is that a program can spawn thousands of fibers wi
 	- Operations, such as `IO.sleep`, are not blocking operations (although they feel like blocking operations.)
 	- When something is Thread-blocking, it gets moved to another thread pool
 
+## How Fibers work (by Fabio Labella)
+### Layers
+- fs2: Declarative, high level, safe concurrency~
+	- Many combinators and a concept of lifetime through Stream
+- cats-effect typeclasses: Specification for low-level, foundation primitives
+- cats-effect IO: Concrete implementation of the runtime system
 
-TODO: Watch video
+### Asynchronicity and Concurrency
+
+- Definition of Asynchronous process:
+	- Asynchronous process: process that executes outside the programs main flow
+	- Asynchronous process (cats definition): A process that continues its execution in a different place or time than the one it started in.
+- Definition of Concurrency
+	- A program structuring technique in which there are multiple logical threads of control whose effects are interleaved.
+	
+Threads are abstractions:
+- A logical thread offers a synchronous interface to an asynchronous process.
+- A threads execution looks synchronous from a high-level perspective, but is asynchronous when looking at it from a lower-level (scheduling) perspective.
+- Logical threasds abstract async processes as synchronous sequences of discrete steps
+- Blocking means suspending threads one layer down. Logical threads at that layer keep running.
+
+Below is an image showing a the two views of a thread's execution. Notice how the thread execution is asynchronous when it is scheduled.
+
+![asynchronous-thread-execution](resources/images/scala/asynchronous-thread-execution.png)
+
+### Real World Concurrency
+- Concurrency: Discrete steps get interleaved
+- Parallelism: Discrete steps run simultaneously
+- Parallelism and concurrency are independent of each other.
+
+#### Layers
+- OS Processes: M:N with processors. Own execution state, own memory space
+- OS/JVM Threads: M:N with processes. Own execution state, shared memory space.
+- Fibers: M:N with threads. Shared execution state, shared memory space.
+
+#### Cost of Blocking
+- JVM threads are a scarce resource
+	- Blocking as JVM thread is not ideal if the intent is to scale out
+	- We spend too much time on context switching
+- Fibers aren't scarce
+	- Blocking a Fiber does not block the underlying thread.
+	- Blocking a fiber is called semmantic blocking. Fibers are just suspended. We are not actually blocking the underlying thread.
+
+#### Scheduling
+- Preemptive: Scheduler suspends tasks
+- Cooperative: Tasks suspend themselves.
+
+An overview of the scheduler can be seen below.
+
+![io-run-loop](resources/images/scala/io-run-loop.png)
+
+IO has what is known as a run loop. Fibers cooperate by submitting request to the JVM Thread Pool and yielding back control. This allows an M:N cooperative scheduling. 
+
+### The IO API
+- An IO produces one value, fails, or never terminates
+- Referentially transparent (pure)
+- Many algebras (Monad, Concurrent, ...)
+
+We can divide IOs use-cases in three:
+- FFI: Wrap side-effects into IO.
+- Combinators: Build complex IOs by composing smaller ones.
+	- E.g. `IO.pure`, `IO.sleep`, `IO.map`, `IO.flatMap`, 
+- Runners: Translate IO to side-effects at the end of the world
+	- `IO.run`, `IO.unsafeRunAsync`, `IO.unsafeRunSync`
+
+
 
 ---
 

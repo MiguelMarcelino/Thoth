@@ -83,7 +83,25 @@ We can divide IOs use-cases in three:
 - Runners: Translate IO to side-effects at the end of the world
 	- `IO.run`, `IO.unsafeRunAsync`, `IO.unsafeRunSync`
 
+### Async
+The async function is as follows:
 
+```scala
+def async[A](k: (Either[Throwable, A] => Unit) => Unit): IO[A]
+```
+
+Key things about async
+- It does not introduce asynchronicity on its own
+- It takes an asynchronous process and exposes it as IO
+- It builds on the idea of continuation
+	- Instead of returning a result, we call the rest of the computation with it
+	- In this case, k is a callback function. It is called by async when the computation completes
+
+Below is an overview of how fibers are created:
+
+![[fibers-overview.png]]
+
+As mentioned earlier, the first layer (above the dotted line) the execution looks synchronous, as it is just a sequence of `flatMap` operations. However, the real execution is completely asynchronous. As fibers are submitted to the execution context, the scheduler will split each one across multiple threads.
 
 ---
 

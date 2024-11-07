@@ -1,7 +1,13 @@
 # FS2 Streams
 The FS2 library has two major capabilities:
-- The ability to build arbitrarily complex streams, possibly with embedded efects
+- The ability to build arbitrarily complex streams, possibly with embedded effects
 - The ability to transform one or more streams using a small but powerful set of operations
+- A stream is like a logical thread of execution
+	- Interleaving logical threads allows complex behaviour
+	- Declarative and composable
+- Streams are good for:
+	- Data that is too big to fit into memory
+	- Control flow that is too hard to fit into one's head
 
 ## Building streams
 
@@ -11,12 +17,11 @@ Stream[F, O]
 ```
 
 It is evaluated as follows:
-- `F` is the effect type. 
-	- The stream requests an evaluation of `F` effects
+- `F` is the effect type. The stream requests an evaluation of `F` effects
 - `O` is the output type. 
-	- It is a stream of `O` values
+- A simple definition of a stream, is that it emits 0...n values of type `A`, where n can be infinite, while requesting effects in F.
 
-Lets consider an example:
+Let's consider an example:
 ```scala
 val s1 = Stream.emit(1)
 ```
@@ -93,3 +98,13 @@ val err4 = Stream(1,2,3).covary[IO] ++
 err4.handleErrorWith { _ => Stream(0) }.compile.toList.unsafeRunSync()
 // res25: List[Int] = List(1, 2, 3, 0)
 ```
+
+
+---
+# Sources
+- https://fs2.io/#/guide
+- https://www.youtube.com/watch?v=YSN__0VEsaw
+
+<hr>
+
+Related to: [cats-effect](cats-effect)

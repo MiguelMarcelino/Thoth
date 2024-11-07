@@ -25,7 +25,7 @@ val program: IO[Unit] =
   } yield ()
 ```
 
-Running the program outputs `hey!` twice.
+Being referentially transparent implies that we could replace `ioa` with its value (`IO { println("hey!")` }), and it would still return the same output. In this case, running the program outputs `hey!` twice.
 
 ## Referential Transparency and Lazy Evaluation
 
@@ -37,8 +37,7 @@ As an example, consider two versions of the same program below:
 | <code>for {<br>  _ <- addToGauge(32)<br>  _ <- addToGauge(32)<br>} yield ()<br></code> | <code>val task = addToGauge(32)<br><br>for {<br>  _ <- task<br>  _ <- task<br>} yield ()<br></code> |
 
 
-In IO, the behaviour is the same on both. However, with Futures, both programs output different results, as the result is not lazily evaluated.
-
+In IO, the behaviour is the same on both. However, with Futures, both programs output different results, as the result is not lazily evaluated. This implies that when we declare task, the value will not be evaluated immediately. Instead, it will only be evaluated in the for cycle.
 
 ## Describing Effects
 
@@ -83,7 +82,7 @@ Cancellation status is only checked after asynchronous boundaries. Cancellation 
 - Using `IO.cancelable`, `IO.async`, `IO.asyncF`, or `IO.bracket`
 - Using `IO.cancelBoundary` or `IO.shift`
 
-> NOTE: `flatMap` chains are only cancellable only if the chain happens after an asynchronous boundary. After an asynchronous boundary, cancellation checks are performed on every N `flatMap`. The value of `N` is hardcoded to 512.
+> NOTE: `flatMap` chains are only cancellable if the chain happens after an asynchronous boundary. After an asynchronous boundary, cancellation checks are performed on every N `flatMap`. The value of `N` is hardcoded to 512.
 
 #### 2. `IO` tasks that are cancellable, usually become non-terminating on `cancel`
 IO cancellation does not work like `Thread.interrupt` in Java, as that is inherently unsafe, unreliable and not portable 
@@ -93,8 +92,7 @@ Read more about cancellation on the [IO Cancellation](io-cancellation) document
 
 ### Markers
 
-`IO.start` and `IO.cancel` are equivalent to doing a thread fork and interrupt operations. However, the IO operations return a Fiber, which is a lightweight thread that (similarly to normal threads) can be joined or interrupted.
-
+`IO.start` and `IO.cancel` are equivalent to doing a thread fork and interrupt operations. However, IO operations return a Fiber, which is a lightweight thread that (similarly to normal threads) can be joined or interrupted.
 
 `IO.runCancelable` & `IO.unsafeRunCancelable` allow us to interrupt tasks (in both safe and unsafe way).
 
@@ -119,7 +117,7 @@ io.uncancelable
 
 
 `IO.cancelBoundary` returns a cancellable boundary
-- It is an IO task that check for the cancellation status of the run-lop
+- It is an IO task that checks for the cancellation status of the run-loop
 - It does not allow for the bind continuation to keep executing in case cancellation happened.
 - `IO.cancelBoundary` is essentially lighter version of `IO.shift` without ability to shift into different thread pool. It is lighter in the sense that it will avoid doing logical fork.
 

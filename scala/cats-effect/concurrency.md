@@ -8,7 +8,7 @@
 	- Creating a thread and possible context switches can have higher cost than the task itself
 
 ### Thread Pools
-- Consist of a work queue and a pool of running threads.
+- Consists of a work queue and a pool of running threads.
 - Every task (in Java, it is an instance of `Runnable`) to execute is placed in the work queue
 	- Scala avoids working with `Runnable`. Abstractions, such as `Future` and `IO` do that under the hood
 - Thread pools can re-use and cache threads
@@ -17,7 +17,7 @@
 There are two main types of thread pools:
 - Bounded
 	- Limits number of available threads to a fixed amount
-		- This can be useful to limit the number of threads to the number of CPUs in the machine
+	- This can be useful to limit the number of threads to the number of CPUs in the machine
 - Unbounded
 	- No thread limit is imposed
 	- This could make the system run out of memory
@@ -32,7 +32,8 @@ There are two main types of thread pools:
 import cats.effect.{Blocker, ContextShift, IO}
 import scala.concurrent.ExecutionContext
 
-implicit val contextShift: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
+implicit val contextShift: ContextShift[IO] = 
+	IO.contextShift(ExecutionContext.global)
 
 def blockingOp: IO[Unit] = IO(/* blocking op*/ ())
 def doSth(): IO[Unit] = IO(/* do something */ ())
@@ -103,7 +104,7 @@ prog.unsafeRunSync()
 ```
 
 This computation will never print `11` nor `22`, as it is waiting for the first computation to finish. Since we are dealing with single thread pools, the second task will end up never getting scheduled.
-Lets now change the `repeat` function in `infiniteIO` function to use `IO.shift`.
+Lets now change the `repeat` function in `infiniteIO` to use `IO.shift`.
 
 ```scala
 def infiniteIO(id: Int)(implicit cs: ContextShift[IO]): IO[Fiber[IO, Unit]] = {

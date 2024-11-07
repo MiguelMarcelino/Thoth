@@ -36,7 +36,7 @@ type Starship {
 }
 ```
 
-The `length` argument has an argument named `unit`. In this case, `unit` is an optional argument, as it has a default value `METER`.
+The `length` field has an argument named `unit`. In this case, `unit` is an optional argument, as it has a default value `METER`.
 
 ## Interfaces
 
@@ -74,7 +74,7 @@ We can use an input type as follows (we omit the variables for brevity):
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <code>mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {<br>  createReview(episode: $ep, review: $review) {<br>    stars<br>    commentary<br>  }<br>}<br></code> | <code>{<br>  "data": {<br>    "createReview": {<br>      "stars": 5,<br>      "commentary": "This is a great movie!"<br>    }<br>  }<br>}<br></code> |
 
-The fields on an input object type can themselves refer to input object types, but ==you can’t mix input and output types in your schema. Input object types also can’t have arguments on their fields==.
+The fields on an input object type can themselves refer to other input object types, but ==you can’t mix input and output types in your schema. Input object types also can’t have arguments on their fields==.
 
 ---
 # Sources

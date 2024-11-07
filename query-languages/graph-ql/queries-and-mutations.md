@@ -9,7 +9,7 @@ As an example, consider the query below
 | ------------ Operation ------------                 | ------------ Response ------------                                                                      |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | <code>{ <br>	me { <br>		name <br>	}<br>}<br></code> | <code>{<br>  "data": {<br>    "me": {<br>      "name": "Luke Skywalker"<br>    }<br>  }<br>}<br></code> |
-The client can create queries mirror the structure of data, making it simple to request exactly the data that is needed. This would then be expanded by GraphQL into the JSON shown above on the right.
+The client can create queries that mirror the structure of data, making it simple to request exactly the data that is needed. This gets resolved by GraphQL into the JSON shown above on the right.
 
 In the previous examples, the operation name was omitted for simplicity. However, it is recommended to always define the operation in production systems. The previous query would look as follows:
 
@@ -21,7 +21,7 @@ query MyName {
 }
 ```
 
-The operation type can be a query, mutation, or subscription, depending on the operation we want to do. We will omit the operation names on the following examples for simplicity, as they are al of type `query`. 
+The operation type can be a `query`, `mutation`, or `subscription`, depending on the operation we want to do. We will omit the operation names on the following examples for simplicity, as they are all of type `query`. 
 
 ## Arguments
 There are times where we want to retrieve only one object. For instance, we may want to retrieve information for an object with a given ID. In such cases, we can provide arguments that allow us to add filters to the queries. In REST, one can only pass a single set of arguments - the query parameters and URL segments in the request. In GraphQL, every field can have its own set of arguments. 
@@ -48,7 +48,7 @@ Fragments allow us to define reusable units, which are sets of fields that can b
 In this case, we define a fragment called `comparisonFields`, which is then used to retrieve information for the `EMPIRE` and `JEDI` episodes without having to repeat the fields twice.
 
 ## Variables
-When argument fields are dynamic, it becomes cumbersome to pass them directly in the query string, as client-side code would need to manipulate the query string an runtime. Instead, we can pass all these dynamic fields as a separate dictionary, effectively making the query string go unchanged.
+When argument fields are dynamic, it becomes cumbersome to pass them directly in the query string, as client-side code would need to manipulate the query string at runtime. Instead, we can pass all these dynamic fields as a separate dictionary, effectively making the query string go unchanged.
 
 Working with variables involves three main steps:
 1. Replace the static value in the query with `$variableName`
@@ -75,7 +75,6 @@ This allows us to simply pass a different variable instead of having to create a
 ## Directives
 Directives are useful to model the request based on dynamic argument values. For instance, consider we only want to retrieve a value from the API when an argument is true. In such cases, we can use directives to specify when to query for something. Below is an example use of directives.
 
-
 | ------------------ Operation ------------------                                                                                                                                                    | ------------- Response -------------                                                             |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | <code>query Hero($episode: Episode, $withFriends: Boolean!) {<br>  hero(episode: $episode) {<br>    name<br>    friends @include(if: $withFriends) {<br>      name<br>    }<br>  }<br>}<br></code> | <code>{<br>  "data": {<br>    "hero": {<br>      "name": "R2-D2"<br>    }<br>  }<br>}<br></code> |
@@ -88,7 +87,7 @@ The response on the right is what is produced for the query on the left if the f
 }
 ```
 
-When `withFriends` is false, the `reponse` will not query for the `name` field. There are two directives we can use:
+When `withFriends` is false, the `reponse` will not query for the `friends` field. There are two directives we can use:
 - `@include(if: Boolean)`: Only include this field in the result if the argument is `true`.
 - `@skip(if: Boolean)`: Skip this field if the argument is `true`.
 
@@ -99,7 +98,7 @@ Although any query can cause data writes on the server, GraphQL has established 
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <code>mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {<br>  createReview(episode: $ep, review: $review) {<br>    stars<br>    commentary<br>  }<br>}<br></code> | <code>{<br>  "data": {<br>    "createReview": {<br>      "stars": 5,<br>      "commentary": "This is a great movie!"<br>    }<br>  }<br>}<br></code> |
 
-An important thing to take away, is that mutation fields run in series. This is opposed to query fields, which are executed in parallel. This implies that if we send two mutations in one request, the first is guaranteed to finish before the second one begins (there are no race conditions).
+> An important thing to take away, is that mutation fields run in series. This is opposed to query fields, which are executed in parallel. This implies that if we send two mutations in one request, the first is guaranteed to finish before the second one begins (there are no race conditions).
 
 
 ---

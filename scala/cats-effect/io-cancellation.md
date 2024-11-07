@@ -20,7 +20,7 @@ def unsafeFileToString(file: File) = {
     // Uninterruptible loop
     // This loop is not cancellable, as there is no way to 
     // safely kill this computation. And Thread.interrupt
-    // is definitely not safe!
+    // is definitely not an option!
     val sb = new StringBuilder()
     var hasNext = true
     while (hasNext) {
@@ -73,9 +73,9 @@ def unsafeFileToString(file: File, isActive: AtomicBoolean) = {
   val sc = new StringBuilder
   val linesIterator = Source.fromFile(file).getLines()
   var hasNext = true
-  // Atomic Boolean stops the loop. The value is passed as an ,
+  // Atomic Boolean stops the loop. The value is passed as an
   // argument to allow the calling function to control the 
-  // computation's cancellation.
+  // loop's stopping condition.
   while (hasNext && isActive.get) {
     sc.append(linesIterator.next())
     hasNext = linesIterator.hasNext

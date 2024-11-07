@@ -3,9 +3,8 @@
 - We can think of each field in GraphQL as a function or method of the previous type, which returns the next type.
 - Each field on each type is backed by a function called the `resolver`, which is provided by the GraphQL server developer
 - When a field is executed, the corresponding resolver is called to produce the next value
-	- If the field produces a scaler, the execution completes
+	- If the field produces a scalar, the execution completes
 	- If the field produces an object, then the query contains more fields that apply to that object
-
 
 ## List resolvers
 

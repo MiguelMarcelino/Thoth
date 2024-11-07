@@ -1,12 +1,13 @@
 # FS2 Streams
 The FS2 library has two major capabilities:
 - The ability to build arbitrarily complex streams, possibly with embedded effects
+	- The reason why it says *possibly*, is because we can have a stream's effect type be `Pure`, meaning it does not require the evaluation of any effects to produce its output.
 - The ability to transform one or more streams using a small but powerful set of operations
 - A stream is like a logical thread of execution
 	- Interleaving logical threads allows complex behaviour
 	- Declarative and composable
 - Streams are good for:
-	- Data that is too big to fit into memory
+	- Data that is too big to fit into memory (because they are chunked)
 	- Control flow that is too hard to fit into one's head
 
 ## Building streams
@@ -39,7 +40,7 @@ val eff = Stream.eval(IO { println("BEING RUN!!"); 1 + 1 })
 ```
 
 Now we have the effect type `IO`. Creating the `IO` in the example above has no side effects and `Stream.eval` doesn't do anything at creation time. It will only run once the stream is interpreted.
-Calling `eval` produces a stream that evaluates the given effect, then emits the result. Any stream formed using eval is called *effectful* and can't be run using `toList` or `toVector`. Instead, we need to compile the stream first.
+Calling `eval` produces a stream that evaluates the given effect, then emits the result. Any stream formed using `eval` is called *effectful* and can't be run using `toList` or `toVector`. Instead, we need to compile the stream first.
 
 ```scala
 import cats.effect.unsafe.implicits.global

@@ -16,8 +16,8 @@ In Kafka, there are __servers__ and __clients__ that communicate via the TCP pro
 
 
 ## Main Concepts and Terminology
-- Event: Records the fact that "something happened". It can also be called a record or message
-- Producers: Clients that Write events to Kafka.
+- Event: Records the fact that "something happened". It can also be called a *record* or *message*
+- Producers: Clients that write events to Kafka.
 - Consumers: Clients that subscribe (read and process) events
 	- A consumer is completely decoupled from the producer. A slow consumer does not affect a producer.
 	- Kafka provides several guarantees, such as processing events exactly once.
@@ -52,7 +52,7 @@ Zookeper
 - We can break a topic into partitions
 - Partitions can be allocated to different brokers
 	- A partition is a log.
-		- Every partition contains a sequence of entries that behave as a log. 
+		- Every partition contains a sequence of entries that behaves as a log. 
 		- When a new entry is added to this log, it is attributed a unique index. Indexes start from zero and auto-increment when a new entry is added
 		- Every partition is attributed its own offset. This ensures there is no clashes between partitions.
 	- A message is added to the end of the partition (since logs are immutable, we can only add it to the end)
@@ -68,11 +68,11 @@ One important thing to note is that not all partitions from a topic will be stor
 ![[kafka_partitions_and_segments_colour.png]]
 
 #### Kafka message
-Kafka messages are composed of 4 components:L
-- Headers: Identifies the event
+Kafka messages are composed of 4 components:
+- Header: Identify the event
 - Key: Identifies an event
-- Value: The contents of the event\
-- Timestamp: The time at which the message was sent. Every message is automatically attributed a timestamp.
+- Value: The contents of the event
+- Timestamp: The time at which the event was created. Every message is automatically attributed a timestamp.
 
 
 ![[kafka_message.png]]

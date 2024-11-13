@@ -24,10 +24,10 @@ Twelve principles for Agile:
 
 Guidelines for the Agile Architect
 1. Commitment and accountability of success-critical stakeholders
-2. Satisfy stakeholders (meeting and acceptability thresholdbased on success-based negotiations and tradeoffs)
+2. Satisfy stakeholders (meeting and acceptability threshold based on success-based negotiations and trade-offs)
 3. Incremental and evolutionary growth of system definition and stakeholder commitment
 4. Interactive system development and definition
-5. Interleaved system development and definition (allow early discovering of core capabilities, continuous adaptation to change, ...)
+5. Interleaved system development and definition (allow early discovering of core capabilities, continuous adaptation to change, …)
 6. Risk management (risk-driven anchor point milestones)
 
 

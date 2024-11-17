@@ -18,6 +18,8 @@
 - High Availability: System is available if any 2 nodes are up
 - Cloud-Native: Take advantage of dynamic cluster scaling
 - Unified Message model: Support both topic and queue semantics
+	-  ==One topic is always owned by a specific broker at any given time. ==
+		- This helps with caching data for a topic
 - Highly Scalable: Supports millions of topics
 
 ## Messaging model

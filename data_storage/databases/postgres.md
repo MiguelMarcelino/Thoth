@@ -168,4 +168,5 @@ A complete guide of `pg_restore` from the official documentation can be found [h
 
 <hr>
 
-Related to: [databases](databases)
+Related to: [databases
+](databases.md)

@@ -65,15 +65,60 @@ There are multiple subscription models:
 
 ## Segments vs partitions
 - Apache Kafka is split into multiple partitions
-	- The size of the partition is determined based on the size of the storage on the node.
+	- The size of the partition is determined based on the size of the storage on the broker.
 	- Log segments are replicated in order across brokers (one broker = one partition)
 - Apache Pulsar is split into segments
 	- Log segments are replicated in a configurable number of bookies across N possible bookies.
 	- Log segments are evenly distributed to achieve horizontal scalability with no rebalancing.
 	- Reconstructing in case of failure can be done from multiple nodes by segment.
+	- This allows setting up tiered storage
+		- Apache BookKeeper can store newer data, while historical data can be stored on AWS S3
 
 ![[segments_vs_partitions.png]]
 
+
+## Replicated Subscriptions
+- Consumption will restart close to where a consumer left off. This allows for a small amount of duplications
+- Implementation:
+	- Markers are injected into the data flow
+	- Consistent snapshot of message IDs is created across the cluster
+	- Establish relationship: If `MA-1` were consumed in cluster A, then `MB-2` must have been consumed in Cluster B.
+
+## Multi-Tenancy
+- A single Pulsar Cluster supports multiple users and mixed workloads.
+- Authentication, Authorization, Namespaces, Admin APIs
+- I/O isolation between reads and writes
+	- Provided by BookKeeper
+	- Ensure readers draining backlog won't affect publishers.
+- Soft isolation: Storage quotas, flow-control, back-pressure, rate limiting.
+- Hardware Isolation: Constrain some tenants on a subset of brokers or bookies.
+
+## Pulsar functions
+- User supplied compute against a consumed message
+	- ETC, data enrichment, filtering, routing
+- Simplest possible API
+	- Use language-specific function notation
+	- No SDK required
+- Language agnostic
+- Pluggable runtime
+	- Managed or manual deployment
+	- Run as threads, processes, or containers in Kubernetes
+
+### State Management
+- Implemented on top of Apache BookKeeper's Table service
+- BookKeeper provides a sharded key/value store based on
+	- Log and Snapshot: Stored as Bookkeeper ledgers
+	- Warm replicas that can be quickly promoted to leader
+- In case of leader failure there is no downtime or huge log to replay
+
+## Pulsar SQL
+- Read data directly from BookKeeper into Presto
+	- Bypass Pulsar Broker
+- Many-to-many data reads.
+	- Data is split even on a single partition
+	- Multiple workers can read data in parallel from a single Pulsar partition
+- Time-based indexing
+	- `publishTime` is used in predicates to reduce data reads
 
 
 ---

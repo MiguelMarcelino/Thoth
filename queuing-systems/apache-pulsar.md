@@ -40,6 +40,7 @@ There are multiple subscription models:
 	- Broker: Stateless service
 		- Does not own the data for one topic
 		- We can move them to different brokers.
+		- These can be seen as compute services that connect to an independent storage layer (they are scaled independently of storage)
 	- Bookie: Storage node
 		- They are IO bound.
 - This layered architecture allows us to scale bookies independently from brokers
@@ -68,16 +69,21 @@ There are multiple subscription models:
 ## Segments vs partitions
 - Apache Kafka is split into multiple partitions
 	- The size of the partition is determined based on the size of the storage on the broker.
-	- Log segments are replicated in order across brokers (one broker = one partition)
+	- Log segments are replicated in order across brokers (one broker always stores the segments of a particular partition)
 - Apache Pulsar is split into segments
 	- Log segments are replicated in a configurable number of bookies across N possible bookies.
 	- Log segments are evenly distributed to achieve horizontal scalability with no rebalancing.
-	- Reconstructing in case of failure can be done from multiple nodes by segment.
+		- Assumption: I assume that one of the advantages is that reconstructing in case of failure can be done from multiple nodes by segment.
 	- This allows setting up tiered storage
 		- Apache BookKeeper can store newer data, while historical data can be stored on AWS S3
+		- Higher granularity when compared to Kafka
 
 ![[segments_vs_partitions.png]]
 
+> **Personal Note**: The main differentiating factor is that Apache Kafka does not allow splitting the individual segments inside the partitions. When we replicate the partitions, then all segments inside those partitions are also replicated. 
+> With Apache Pulsar, the individual segments are replicated and distributed across the Bookies. This is similar to removing the Partition definition from Kafka and allowing all segments to be split amongst individual bookies. This can allow for better horizontal scalability, as segments are smaller than partitions.
+
+==Interesting Question: Is storing the individual segments actually better for performance? I have seen several compassions between Pulsar and Kafka, and Kafka always manages to have higher throughput. Maybe it is actually an advantage to keep all segments for a partition stored contiguously, instead of unordered in a Bookie (assuming they are actually unordered)?==
 
 ## Replicated Subscriptions
 - Consumption will restart close to where a consumer left off. This allows for a small amount of duplications

@@ -13,13 +13,13 @@
 - [Apache Pulsar](apache-pulsar.md): Message and Offset store
 
 ## B-tree vs LSM
-- Primary data structures for storage engines
-- B-tree behind traditional databases
+- These are the primary data structures for storage engines
+- B-tree is behind traditional databases
 	- PostgreSQL, MySQL
 	- Indexing for expensive random access on HDD
 - Log structured Merge (LSM) trees
 	- Good write throughput
-	- Behind many modern workloads:
+	- Behind many modern workloads
 		- Stream: Apache BookKeeper, Kafka Streams, Apache Pulsar, Flink
 		- OLTP: MongoRocks, CockroadDB
 		- TSDB: influxDB
@@ -32,8 +32,8 @@
 	- Key-value store
 	- Append only: Low-latency and High throughput
 	- Duplicate record for update/delete
-	- Compaction to remove stale / deleted records
-		- Values are not deleted immediately. Only when compaction happens is data compacted.
+	- Compaction to remove stale/deleted records
+		- Values are not deleted immediately. Compaction takes care of deleting the data.
 - Zookeeper
 	- Metadata Store
 	- Cluster coordination
@@ -95,6 +95,9 @@ A new writer adds a new Ledger. Writes and reads continue from there.
 
 
 ![[bookkeeper_and_pulsar_topic_mapping.png]]
+
+## Questions
+- How do ledgers relate to bookies?
 
 ---
 # Sources

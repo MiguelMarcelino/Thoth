@@ -54,11 +54,9 @@
 	- Dynamic mapping: Elasticsearch automatically detects the data types and creates the mappings. Can lead to suboptimal results due to automatic field type inference
 	- Explicit mapping: Define mappings up front by specifying data types for each field
 
-## Underneath the skin
-- It can be seen as an API to many Lucene shards
-- Instead of users having to figure out to which shard to connect/store the data to, Elasticsearch does it on its own.
-- A group of related shards is presented to the user as an index.
-	- An index is a group of related Lucene shards.
+
+
+
 
 
 ---

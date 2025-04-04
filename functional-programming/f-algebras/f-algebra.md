@@ -66,7 +66,6 @@ cata :: Functor f => (f a -> a) -> Fix f -> a
 cata alg = alg . fmap (cata alg) . unFix
 ```
 
-
 This function recursively applies the algebra `alg` over the structure, effectively reducing it to a single value.
 
 ## Coalgebras
@@ -83,4 +82,5 @@ Understanding F-algebras and their related concepts like catamorphisms and coalg
 
 # Sources
 - https://en.wikipedia.org/wiki/F-algebra
-- ChatGPT
+- https://ctfpis.gitbook.io/project/category-theory-for-programmers/part_three/f-algebras
+- Some of this content was summarized by ChatGPT

@@ -60,7 +60,7 @@ evalZ (RNeg n)   = -n
 ## Tree data structure
 If we go further, we end up with a tree structure.  The functor `RingF` is a structure with "holes" where it expects a type parameter `a`. Normally, we fill this hole with a concrete type (like `Int`), but instead, we can nest it within itself.
 
-If we replace a with Int, we get non-recursive expressions.
+If we replace `a` with `Int`, we get non-recursive expressions.
 
 ```haskell
 type RingF0 a = a  -- Just a simple type, no structure
@@ -94,7 +94,6 @@ We generalize this pattern:
 
 ```haskell
 type RingFnPlus1 a = RingF (RingFn a)
-
 ```
 
 This means every new level is constructed from the previous level. It creates an infinite tower of function applications. If we keep applying this infinitely, we reach a fixed point:
@@ -105,7 +104,7 @@ type Expr = Fix RingF
 
 Here, `Expr` stops depending on `a`. This is because after infinite nesting, there's no more "hole" left to fill - `a` disappears entirely. We always end up at `Fix RingF`, no matter what we started with.
 
-This forks for the category Set (the category of all sets and functions), as it has a well-behaved notion of limits and recursion This means that the recursive construction always reaches a well-defined limit (our `Expr` type). In some other categories, this process might not converge nicely.
+This works for the category Set (the category of all sets and functions), as it has a well-behaved notion of limits and recursion This means that the recursive construction always reaches a well-defined limit (our `Expr` type). In some other categories, this process might not converge nicely.
 
 
 ## Main Aspects of Groups

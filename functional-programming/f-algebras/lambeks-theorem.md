@@ -118,17 +118,6 @@ Thus, **`Fix f` is the initial algebra of the functor `f`**, and **Lambek’s th
 | Lambek’s Theorem      | `F i ≅ i`                  | `Fix f ≅ f (Fix f)`         |
 
 
----
-
-## One more thing - ELLI5 Lambek's theorem
-Imagine you have a LEGO instruction manual (`F i`) and the finished LEGO spaceship (`i`). The **evaluator** `j` is like *building the spaceship* from the instructions. The **inverse** `m` is like *taking it apart back into instructions*.
-
-Now:
-- If you can **build and unbuild** the spaceship perfectly—no pieces lost, nothing extra—that means the instructions and the spaceship are basically *the same thing in disguise*. That’s what an **isomorphism** means.
-- A **homomorphism** is just a way to translate from one set of LEGO instructions to another, while keeping the meaning (how they build a spaceship) the same.
-
-Lambek’s theorem says: in this special LEGO universe, your building and unbuilding functions (`j` and `m`) are perfect mirrors — so the instructions and the final build are one and the same.
-
 <hr>
 
 # Sources

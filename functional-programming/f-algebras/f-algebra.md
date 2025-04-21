@@ -84,3 +84,7 @@ Understanding F-algebras and their related concepts like catamorphisms and coalg
 - https://en.wikipedia.org/wiki/F-algebra
 - https://ctfpis.gitbook.io/project/category-theory-for-programmers/part_three/f-algebras
 - Some of this content was summarized by ChatGPT
+
+<hr>
+
+Related to: [functional-programming](functional-programming)

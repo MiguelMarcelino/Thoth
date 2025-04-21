@@ -156,3 +156,7 @@ And this is where the definition of Y-combinator comes from: A function whose ou
 ---
 # Sources
 - https://plato.stanford.edu/entries/lambda-calculus/
+
+<hr>
+
+Related to: [functional-programming](functional-programming)

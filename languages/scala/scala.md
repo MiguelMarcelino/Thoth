@@ -1,4 +1,4 @@
-# Scala Language
+# Scala
 
 * Scala comes from the word *scalable*
 * Combines Object-Oriented (OO) and Functional programming (FP/OOP fusion)
@@ -26,3 +26,7 @@
 
 ## Compiler Optimizations
 * When you compile your Scala code to Java bytecodes, the Scala compiler will use Java’s primitive types where possible to give you the performance benefits of the primitive types.
+
+<hr>
+
+Related to: [languages](../languages)

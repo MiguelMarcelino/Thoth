@@ -1,4 +1,5 @@
 # Reactive Principles
+Reactive Principles refer to a set of architectural guidelines that enable systems to be scalable, resilient, responsive, and elastic — even in the face of failure, variable load, and network unpredictability.
 
 ## Stay Responsive
 * Always respond in a timely manner
@@ -37,7 +38,7 @@
 * Consistency guarantees the correctness and integrity of an application and user’s data.
 * Convergence in distributed systems: the system is always in the process of convergence but never manages to fully “catch up” and reach a final state of convergence (on a global system scale). 
 	* Define *units of consistency*: small islands of strong consistency
-* Design systems for [eventual consistency](eventual-consistency.md) new tab or [causal consistency](causal-consistency.md)
+* Design systems for [eventual consistency](eventual-consistency.md) or [causal consistency](causal-consistency.md)
 
 ## Decouple Time
 * Process asynchronously to avoid coordination and waiting

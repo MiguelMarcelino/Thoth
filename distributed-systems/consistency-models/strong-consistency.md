@@ -22,6 +22,7 @@ If process A writes value 10 to a variable and process B reads it afterward, B m
 <hr>
 
 ## Sources
+- N/A
 
 <hr>
 

@@ -23,6 +23,7 @@ If process A writes 10, then 20 to a variable, and process B reads it, B may see
 <hr>
 
 ## Sources
+- N/A
 
 <hr>
 

@@ -31,6 +31,7 @@ Vector clocks require each process to maintain a vector whose size equals the nu
 <hr>
 
 ## Sources
+- N/A
 
 <hr>
 

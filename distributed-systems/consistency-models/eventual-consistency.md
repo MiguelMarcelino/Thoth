@@ -19,6 +19,7 @@ Eventual consistency trades immediate consistency for higher availability and pa
 <hr>
 
 ## Sources
+- N/A
 
 <hr>
 

@@ -8,7 +8,7 @@
 * Consists of running multiple copies of an application behind a load balancer. 
 * With N copies, each copy handles 1/N of the load.
 
-### Drawbacks 
+### Drawbacks
 * Caches require more memory to be effective, as each copy potentially accesses all of the data
 * Does not tackle the problems of increasing development and application complexity.
 

@@ -2,8 +2,7 @@
 
 ## Overview
 
-Synchronization ensures that when multiple threads access shared data, results remain correct.
-Without it, race conditions can occur.
+Synchronization ensures that when multiple threads access shared data, results remain correct. Without it, race conditions can occur.
 
 ## Key Concepts
 

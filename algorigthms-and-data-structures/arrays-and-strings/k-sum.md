@@ -265,4 +265,4 @@ k_sum([1, 0, -1, 0, -2, 2], 0, 4)
 
 <hr>
 
-Related to: [algorithms-and-data-structures](algorithms-and-data-structures)
+Related to: [arrays-and-strings](arrays-and-strings)

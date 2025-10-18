@@ -157,4 +157,4 @@ assert cache.get(4) == 4
 
 <hr>
 
-Related to: [algorithms-and-data-structures](algorithms-and-data-structures)
+Related to: [hash-tables-and-sets](hash-tables-and-sets)

@@ -88,7 +88,7 @@ class RateLimiter:
 
 * Two-pointer / deque pattern → efficient O(n) solution instead of O(n²).
 * Edge cases: empty array, k > n, all duplicates.
-* Real-world relevance: streaming data, monitoring, rate-limiting — very Cloudflare-like.
+* Real-world relevance: streaming data, monitoring, rate-limiting.
 * Optimizations:
   * Use deque to maintain max/min in sliding window in O(n) (monotonic queue).
   * For variable windows, hash map helps track frequency or counts.

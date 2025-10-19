@@ -5,4 +5,4 @@
 
 <hr>
 
-Related to: [algorithms-and-data-structures](algorithms-and-data-structures)
+Related to: [algorithms-and-data-structures](../algorithms-and-data-structures)

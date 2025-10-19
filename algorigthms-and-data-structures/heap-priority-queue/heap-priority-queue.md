@@ -57,4 +57,4 @@ Don't forget that we need to re-heapify after updating items.
 
 <hr>
 
-Related to: [algorithms-and-data-structures](algorithms-and-data-structures)
+Related to: [algorithms-and-data-structures](../algorithms-and-data-structures)

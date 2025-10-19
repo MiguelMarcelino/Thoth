@@ -51,4 +51,4 @@ Both operations must succeed or neither should happen.
 
 <hr>
 
-Related to: [distributed-systems](distributed-systems.md)
+Related to: [distributed-systems](../distributed-systems.md)

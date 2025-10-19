@@ -13,7 +13,7 @@ In other words, updates may not be immediately visible to all nodes, but given e
 ## Example:
 In a distributed database, if a user updates their profile on one server, other servers might not see the change immediately. However, after the system synchronizes, all servers will show the same, updated profile.
 
-Eventual consistency trades immediate consistency for higher availability and partition tolerance, following the principles of the CAP theorem.
+Eventual consistency trades immediate consistency for higher availability and partition tolerance, following the principles of the [CAP theorem](../cap-theorem.md).
 
 
 <hr>

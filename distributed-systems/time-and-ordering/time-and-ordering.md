@@ -2,4 +2,4 @@
 
 <hr>
 
-Related to: [distributed-systems](distributed-systems.md)
+Related to: [distributed-systems](../distributed-systems.md)

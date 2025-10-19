@@ -66,5 +66,5 @@ Reactive Principles refer to a set of architectural guidelines that enable syste
 
 <hr>
 
-Related to: [distributed-systems](distributed-systems.md)
+Related to: [distributed-systems-theory](distributed-systems-theory.md)
 Tags: #todo

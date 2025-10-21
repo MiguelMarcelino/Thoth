@@ -6,3 +6,6 @@
 - It can serve as the foundation for event-driven architectures and microservices
 
 
+<hr>
+
+Related to: [distributed-systems](../distributed-systems.md)

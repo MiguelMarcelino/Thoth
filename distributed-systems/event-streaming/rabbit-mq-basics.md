@@ -76,4 +76,5 @@ Upon introducing some changes in RabbitMQ's layout, one has to take care of the 
 -   Transfer all the messages to a new queue: Requires one to re-write the current queue handler code, which would transform the messages in to a new message and re-publish them to the new exchange and queue.
 
 <hr>
-Related to: [queuing-systems](queuing-systems)
+
+Related to: [event-streaming](event-streaming.md)

@@ -75,5 +75,6 @@ Enough of that! Let's move on to the patterns. In no particular order, here we g
 	- Stacking up dead letters in a queue that is analysed manually
 
 
----
-Related to: [queuing-systems](queuing-systems)
+<hr>
+
+Related to: [event-streaming](event-streaming.md)

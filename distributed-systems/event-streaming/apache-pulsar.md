@@ -133,6 +133,7 @@ There are multiple subscription models:
 # Sources
 - https://www.youtube.com/watch?v=O2OXyA3YMMM
 
+
 <hr>
 
-Related to: [queuing-systems](queuing-systems)
+Related to: [event-streaming](event-streaming.md)

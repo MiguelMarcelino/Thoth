@@ -113,4 +113,4 @@ To query for the data in Kafka, we can use a syntax that is similar to SQL calle
 
 <hr>
 
-Related to: [queuing-systems](queuing-systems)
+Related to: [event-streaming](event-streaming.md)

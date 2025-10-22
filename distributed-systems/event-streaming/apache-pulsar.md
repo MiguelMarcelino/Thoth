@@ -129,6 +129,16 @@ There are multiple subscription models:
 	- `publishTime` is used in predicates to reduce data reads
 
 
+## Pulsar vs. Kafka
+
+| Aspect                  | **Kafka**                                                                                                                | **Pulsar**                                                                                                                       |
+| :---------------------- | :----------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| **Storage model**       | Storage and serving **tightly coupled** — brokers both handle clients and store data on their local disks (in segments). | Storage and serving **decoupled** — brokers handle clients and coordination; actual data lives in **Apache BookKeeper** bookies. |
+| **Unit of replication** | **Partition** replicated across brokers.                                                                                 | **Ledger** (BookKeeper segment) replicated across bookies.                                                                       |
+| **Data ownership**      | Each partition is “owned” by one broker (leader).                                                                        | A topic is split into ledgers; these are distributed among many bookies automatically.                                           |
+| **Scaling storage**     | Adding brokers = more storage and compute together.                                                                      | You can scale **storage** (bookies) independently of **compute** (brokers).                                                      |
+
+
 ---
 # Sources
 - https://www.youtube.com/watch?v=O2OXyA3YMMM

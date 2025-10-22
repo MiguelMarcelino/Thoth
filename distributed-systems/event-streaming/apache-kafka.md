@@ -52,6 +52,7 @@ Zookeper
 - We can break a topic into partitions
 - Partitions can be allocated to different brokers
 	- A partition is a log.
+	    - Each partition lives on exactly one broker as its leader.
 		- Every partition contains a sequence of entries that behaves as a log. 
 		- When a new entry is added to this log, it is attributed a unique index. Indexes start from zero and auto-increment when a new entry is added
 		- Every partition is attributed its own offset. This ensures there is no clashes between partitions.
@@ -78,13 +79,24 @@ Kafka messages are composed of 4 components:
 ![[kafka_message.png]]
 
 #### Broker Replication
-Every partition is replicated across multiple brokers. When a partition is replicated, there are two main concepts:
+Every partition is replicated across multiple brokers. So, replication in Kafka happens at the partition level, not the segment level. When a partition is replicated, there are two main concepts:
 - Leader: The main partition. 
 	- The producer connects to the broker that has the lead partition
 - Follower: The replicas of the main partition
 	- Followers scrape the messages to be up-to-date
 
 ![[kafka_replication.png]]
+
+
+#### Storage hierarchy overview
+Below is a table containing an overview of the storage hierarchy used by Kafka.
+
+| Concept   | Level               | Stored on                               | Replication mechanism                               |
+| --------- | ------------------- | --------------------------------------- | --------------------------------------------------- |
+| Topic     | Logical grouping    | Multiple brokers                        | Via partition replication                           |
+| Partition | Logical log         | One broker (leader), replicas on others | Yes — entire partition replicated                   |
+| Segment   | Physical file chunk | On a single broker                      | No — indirectly replicated as part of the partition |
+
 
 ## Kafka API
 Kafka has 5 core APIs for Java and Scala:

@@ -3,7 +3,7 @@
 The Transport Layer (Layer 4) is one of the most important parts of the OSI model because it’s where data delivery reliability, flow control, and segmentation happen.
 
 It provides the logical communication between applications running on different hosts.
-The two main protocols at this layer are TCP and UDP — each suited for different kinds of network communication.
+The two main protocols at this layer are TCP and UDP - each suited for different kinds of network communication.
 
 ---
 
@@ -77,4 +77,4 @@ UDP is simple and fast because it skips all the connection setup and reliability
 
 <hr>
 
-Related to: [networking](networking)
+Related to: [computer-networks](computer-networks)

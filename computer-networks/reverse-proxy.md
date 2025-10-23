@@ -54,4 +54,4 @@ A reverse proxy is a server that sits between clients and backend servers, forwa
 
 <hr>
 
-Related to: [networking](networking)
+Related to: [computer-networks](computer-networks)

@@ -40,6 +40,6 @@ The TCP/IP model (used practically on the internet) is simpler - it has 4 layers
 
 <hr>
 
-Related to: [networking](networking)
+Related to: [computer-networks](computer-networks)
 
 

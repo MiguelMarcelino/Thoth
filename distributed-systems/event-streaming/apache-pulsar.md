@@ -83,7 +83,7 @@ There are multiple subscription models:
 > **Personal Note**: The main differentiating factor is that Apache Kafka does not allow splitting the individual segments inside the partitions. When we replicate the partitions, then all segments inside those partitions are also replicated. 
 > With Apache Pulsar, the individual segments are replicated and distributed across the Bookies. This is similar to removing the Partition definition from Kafka and allowing all segments to be split amongst individual bookies. This can allow for better horizontal scalability, as segments are smaller than partitions.
 
-==Interesting Question: Is storing the individual segments actually better for performance? I have seen several compassions between Pulsar and Kafka, and Kafka always manages to have higher throughput. Maybe it is actually an advantage to keep all segments for a partition stored contiguously, instead of unordered in a Bookie (assuming they are actually unordered)?==
+==Interesting Question: Is storing the individual segments actually better for performance? I have seen several comparissons between Pulsar and Kafka, and Kafka always manages to have higher throughput. Maybe it is actually an advantage to keep all segments for a partition stored contiguously, instead of unordered in a Bookie (assuming they are actually unordered)?==
 
 ## Replicated Subscriptions
 - Consumption will restart close to where a consumer left off. This allows for a small amount of duplications

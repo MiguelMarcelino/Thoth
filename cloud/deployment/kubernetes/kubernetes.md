@@ -6,7 +6,7 @@
 
 ## Cluster
 * The Control Plane is responsible for managing the cluster.
-	* Schedules applications, maintaines applications' desired state, scales applications, and rolles out new updates.
+	* Schedules applications, maintains applications' desired state, scales applications, and rolles out new updates.
 * A node is a VM or a physical computer that serves as a worker machine in a Kubernetes cluster.
 	* Each node has a Kubelet, which is an agent for managing the node and communicating with the Kubernetes control plane.
 * The nodes communicate with the control plane using the Kubernetes API

@@ -8,8 +8,8 @@ Architecture that structures the application as a set of loosely coupled, collab
 * Independently deployable
 	* Deploy their service without having to coordinate with other teams
 * Capable of being developed by a small team
-	* high productivity 
-	* Avoids high cocmmunication head of large teams
+	* High productivity 
+	* Avoids high communication overhead for large teams
 
 
 ## Key Characteristics of Microservices

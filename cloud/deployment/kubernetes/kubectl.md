@@ -1,6 +1,6 @@
 # Kubectl
 
-Kubectl is a command line tool for communicating with a [Kubernetes](cloud/deployment/kubernetes/kubernetes.md) cluster's control pane, using the Kubernetes API.
+Kubectl is a command line tool for communicating with a [Kubernetes](cloud/deployment/kubernetes/kubernetes.md) cluster's control plane, using the Kubernetes API.
 
 ---
 ## Installation

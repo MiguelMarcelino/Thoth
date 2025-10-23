@@ -9,5 +9,5 @@ Operational dashboards for your data here, there, or anywhere
 
 <hr>
 
-Related to: [monitoring](cloud/monitoring/monitoring.md)
+Related to: [monitoring](cloud-computing/monitoring/monitoring.md)
 Tags: #info-review 

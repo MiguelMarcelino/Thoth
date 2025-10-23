@@ -2,4 +2,4 @@
 
 <hr>
 
-Related to: [cloud](cloud)
+Related to: [cloud-computing](cloud-computing)

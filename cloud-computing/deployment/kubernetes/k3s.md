@@ -24,4 +24,4 @@ Stored in `/var/lib/rancher/k3s/server/db/snapshots`.
 
 <hr>
 
-Related to: [kubernetes](cloud/deployment/kubernetes/kubernetes.md)
+Related to: [kubernetes](cloud-computing/deployment/kubernetes/kubernetes.md)

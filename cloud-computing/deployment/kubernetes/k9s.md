@@ -1,5 +1,5 @@
 # K9s
-K9s is a command line interface to easy up managing [Kubernetes](cloud/deployment/kubernetes/kubernetes.md) clusters.
+K9s is a command line interface to easy up managing [Kubernetes](cloud-computing/deployment/kubernetes/kubernetes.md) clusters.
 
 Core features of k9s are, for instance:
 - Editing of resource manifests
@@ -45,4 +45,4 @@ sudo install -o root -g root -m 0755 k9s /usr/local/bin/k9s
 
 <hr>
 
-Related to: [kubernetes](cloud/deployment/kubernetes/kubernetes.md)
+Related to: [kubernetes](cloud-computing/deployment/kubernetes/kubernetes.md)

@@ -30,4 +30,7 @@ Guidelines for the Agile Architect
 5. Interleaved system development and definition (allow early discovering of core capabilities, continuous adaptation to change, …)
 6. Risk management (risk-driven anchor point milestones)
 
+<hr>
 
+Related to: 
+- [software-engineering](../software-engineering.md)

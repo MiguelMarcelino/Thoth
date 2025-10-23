@@ -52,8 +52,7 @@ Or for those who like baseball: Three strikes, and you refactor.
 - _"The difference between a poison and something benign is the dose"_ - Paracelsus maxim
 	- Meaning in the book: It was used to explain how global data can actually make your code worse. You can get away with small doses of global data, but it gets exponentially harder to deal with the more you have.
 
+<hr>
 
-
-
-
-
+Related to: 
+- [software-engineering](../software-engineering.md)

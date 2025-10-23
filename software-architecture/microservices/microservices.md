@@ -30,4 +30,7 @@ Architecture that structures the application as a set of loosely coupled, collab
 ## Sources
 * https://microservices.io/patterns/microservices.html
 
+<hr>
+
+Related to: [software-architecture](../software-architecture.md))
 

@@ -26,3 +26,8 @@
 
 ## Sources
 * https://learn.microsoft.com/en-us/visualstudio/test/unit-test-basics?view=vs-2022
+
+<hr>
+
+Related to: 
+- [software-engineering](../software-engineering.md)

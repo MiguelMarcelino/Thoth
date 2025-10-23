@@ -66,4 +66,4 @@
 ---
 
 Related to: 
-- [search](search)
+- [information-retrieval](../information-retrieval.md)

@@ -41,3 +41,7 @@ However, as systems grow, REST sometimes gets replaced (or complemented) by:
 * gRPC (binary, faster for internal communication)
 * GraphQL (flexible querying)
 * Async messaging (Kafka, RabbitMQ, etc.)
+
+<hr>
+
+Related to: [microservices](microservices)

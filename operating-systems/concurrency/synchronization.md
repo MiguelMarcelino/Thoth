@@ -22,4 +22,4 @@ Synchronization ensures that when multiple threads access shared data, results r
 
 <hr>
 
-Related to: [operating-systems](operating-systems)
+Related to: [operating-systems](../operating-systems)

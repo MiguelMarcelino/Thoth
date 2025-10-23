@@ -22,4 +22,4 @@ A deadlock occurs when two or more processes wait for each other indefinitely, e
 
 <hr>
 
-Related to: [operating-systems](operating-systems)
+Related to: [operating-systems](../operating-systems)

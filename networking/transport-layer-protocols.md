@@ -77,4 +77,4 @@ UDP is simple and fast because it skips all the connection setup and reliability
 
 <hr>
 
-Related to: [computer-networks](computer-networks)
+Related to: [networking](networking)

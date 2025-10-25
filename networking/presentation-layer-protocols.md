@@ -88,4 +88,4 @@ Here’s a simplified step-by-step of what happens when your browser connects se
 
 <hr>
 
-Related to: [computer-networks](computer-networks)
+Related to: [networking](networking)

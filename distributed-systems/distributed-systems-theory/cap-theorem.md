@@ -24,12 +24,6 @@ You can’t fully have all three at once.
 | CA (Consistency + Availability)         | Only possible in single-node or fully reliable networks | Traditional RDBMS (non-distributed) |
 
 
-## 4. Real-World Intuition
-
-* Cloudflare relevance: Edge nodes and origins are often distributed; decisions about caching, replication, and data freshness reflect CAP tradeoffs.
-* Example: When Cloudflare’s edge cache can’t reach origin - serve stale content (Availability) or return error (Consistency).
-
-
 <hr>
 
 Related to: [distributed-systems-theory](distributed-systems-theory.md)

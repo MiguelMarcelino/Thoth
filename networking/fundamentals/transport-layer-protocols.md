@@ -30,7 +30,7 @@ TCP ensures reliable communication through several key mechanisms:
 
 1. Three-Way Handshake (Connection Establishment)
 
-   * SYN → Client requests connection
+   * SYN → Client requests connection (It is a control flag used to initiate a new connection by synchronizing sequence numbers between two endpoints)
    * SYN-ACK → Server acknowledges request
    * ACK → Client confirms and connection established
 

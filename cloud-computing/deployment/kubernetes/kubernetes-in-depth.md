@@ -6,12 +6,11 @@ Kubernetes provides
 * Scalability (high performance)
 * Disaster recovery
 
----
 
 ## K8s Architecture
 Below is the architecture of Kubernetes. This section briefly explains what each term means.
 
-![[kubernetes-revised-architecture.png]]
+![kubernetes-revised-architecture](../../../resources/images/kubernetes/kubernetes-revised-architecture.png)
 
 ### Pod
 * Abstraction over a container (although one can run multiple containers within a single pod)
@@ -53,6 +52,7 @@ Below is the architecture of Kubernetes. This section briefly explains what each
 * Is an abstraction on top of pods
 * It allows setting a certain number of replicas to optimize uptime
 * It manages a replica set
+
 ### Ingress
 * Proxies incoming requests
 * Exposes an internal service through a URL (essentially maps the IP address to an external address)
@@ -98,10 +98,9 @@ Below is the architecture of Kubernetes. This section briefly explains what each
 
 
 An overview over the layers of abstraction
-![[kubernetes_layers_of_abstraction.png]]
 
+![kubernetes_layers_of_abstraction](../../../resources/images/kubernetes/kubernetes_layers_of_abstraction.png)
 
----
 
 ## Some commands
 * Pod commands
@@ -120,7 +119,6 @@ An overview over the layers of abstraction
 		* Images can be pulled from dockerhub
 	* kubectl delete deployment NAME_OF_DEPLOYMENT
 
----
 
 ## Kubernetes configuration file
 To avoid using these commands too extensively, one can use deployment configurations. To apply a configuration, use the following command
@@ -182,7 +180,6 @@ spec:
 			  - containerPort: 80
 ```
 
----
 
 ## Namespaces
 4 Default namespaces
@@ -199,21 +196,22 @@ spec:
 
 The first use of namespaces is to create groups for different kinds of applications. The picture below illustrates this scenario.
 
-![[kubernetes_namespace_example.png]]
+![kubernetes_namespace_example](../../../resources/images/kubernetes/kubernetes_namespace_example.png)
+
 
 Another scenario where multiple namespace are necessary, is in a scenario where multiple teams are working in the same cluster. This way, multiple teams can be deploying different versions of the same application without disrupting each others flow.
 
-![[kubernetes_namespaces_multipe_teams.png]]
+![kubernetes_namespaces_multipe_teams](../../../resources/images/kubernetes/kubernetes_namespaces_multipe_teams.png)
 
 
 Another strategy is called Blue/Green deployment. This allows us to deploy a newer version to production much faster and switch to the new deployment when that is ready. This reduces downtime (hence, it increases availability) and avoids having to setup a separate cluster.
 
-![[kubernetes_blue_green_deployment.png]]
+![kubernetes_blue_green_deployment](../../../resources/images/kubernetes/kubernetes_blue_green_deployment.png)
 
 
 Finally, it is also possible to limit the amount of resources per namespace level. This avoids having one team that consumes all the resources, leaving other teams without resources for scheduling new pods.
 
-![[kubernetes_limit_resources.png]]
+![kubernetes_limit_resources.png](../../../resources/images/kubernetes/kubernetes_limit_resources.png)
 
 
 Things to consider about namespaces
@@ -227,13 +225,12 @@ Things to consider about namespaces
 		* kubectl api-resources --namespaced=false
 
 
----
 ## Ingress
 * Entrypoint to the cluster
 * Evaluates all the rules
 * Manages redirections
 
-![[kubernetes_ingress.png]]
+![kubernetes_ingress](../../../resources/images/kubernetes/kubernetes_ingress.png)
 
 The image above also shows a Cloud Load Balancer, which will be used if Kubernetes is deployed to a cloud provider.
 
@@ -250,8 +247,6 @@ data:
 	tls.key: base64 encoded key
 type: kubernetes.io/tls
 ```
-
----
 
 ## Helm
 * Package manager for kubernetes
@@ -271,8 +266,6 @@ type: kubernetes.io/tls
 	* `helm install --values=new_values.yaml CHART_NAME`
 	* The values stored in `new_values.yaml` will override the values stored in `values.yaml`.
 
-
----
 
 ## Stateful vs stateless applications
 ### Stateless application
@@ -299,3 +292,7 @@ type: kubernetes.io/tls
 * Concepts: https://kubernetes.io/docs/concepts/overview/components/
 * Objects in Kubernetes: https://kubernetes.io/docs/concepts/overview/working-with-objects/
 * Amazing video: https://www.youtube.com/watch?v=X48VuDVv0do
+
+<hr>
+
+Related to: [kubernetes](kubernetes)

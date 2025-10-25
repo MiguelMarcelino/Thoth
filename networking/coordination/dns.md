@@ -15,7 +15,36 @@ Here’s how it works step by step:
 
 DNS effectively acts as the "phone book" of the internet, mapping domain names to IP addresses in a distributed, fault-tolerant hierarchy.
 
+## DNS Records
 
-<hr>
+DNS records map human-readable domain names to network resources.
+
+### Common record types:
+
+* A: maps a domain to an IPv4 address (e.g., 93.184.216.34)
+* AAAA: maps a domain to an IPv6 address
+* CNAME: canonical name, points one domain to another domain
+* MX: mail exchange record for directing email
+* TXT: arbitrary text data, commonly for verification
+* NS: identifies authoritative name servers for a domain
+
+### TTL (Time To Live):
+
+* Defines how long a DNS record is cached
+* Higher TTL improves performance and reduces DNS load
+* Lower TTL makes changes propagate faster
+
+### Impact on distributed systems:
+
+* DNS changes are not immediate due to caching
+* Load balancing can use multiple A/AAAA records
+* Service migrations require careful TTL planning
+
+---
+
+# Sources
+- N/A
+
+---
 
 Related to: [coordination](coordination)

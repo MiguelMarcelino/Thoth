@@ -14,3 +14,8 @@ Here’s how it works step by step:
 8. Caching: The result is cached at multiple layers (OS, browser, resolver) for a time defined by the record’s TTL (Time To Live) to speed up future lookups.
 
 DNS effectively acts as the "phone book" of the internet, mapping domain names to IP addresses in a distributed, fault-tolerant hierarchy.
+
+
+<hr>
+
+Related to: [coordination](coordination)

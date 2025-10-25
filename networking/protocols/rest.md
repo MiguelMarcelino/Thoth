@@ -1,4 +1,4 @@
-# REST APIs (Representational State Transfer)
+# REST (Representational State Transfer)
 
 A REST API is a set of conventions for building web services that allow systems to communicate using HTTP in a stateless way.
 It’s the most common way microservices communicate.
@@ -44,4 +44,4 @@ However, as systems grow, REST sometimes gets replaced (or complemented) by:
 
 <hr>
 
-Related to: [microservices](microservices)
+Related to: [protocols](protocols)

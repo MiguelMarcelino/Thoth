@@ -5,15 +5,15 @@ The OSI (Open Systems Interconnection) model is a conceptual framework used to u
 
 ## The 7 Layers of the OSI Model
 
-| Layer | Name         | Main Function                                                                                                  | Examples of Protocols / Devices                 |
-| --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
+| Layer | Name         | Main Function                                                                                                      | Examples of Protocols / Devices                     |
+| ----- | ------------ | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
 | 1     | Physical     | Transmits raw bits over a physical medium (cables, radio, etc.). Defines hardware specs, voltages, and data rates. | Ethernet cables, Fiber optics, Hubs, Repeaters      |
 | 2     | Data Link    | Provides reliable node-to-node data transfer, handles framing, MAC addressing, and error detection.                | Ethernet (IEEE 802.3), PPP, Switches, MAC Addresses |
 | 3     | Network      | Determines routing and logical addressing (IP addressing). Moves packets between networks.                         | IP, ICMP, ARP, RIP, OSPF                            |
 | 4     | Transport    | Ensures reliable (or fast, if UDP) data delivery between hosts; handles segmentation, flow, and error control.     | TCP, UDP                                            |
-| 5     | Session      | Manages sessions or dialogs between applications — establishes, maintains, and terminates connections.             | NetBIOS, RPC, PPTP                                  |
+| 5     | Session      | Manages sessions or dialogs between applications - establishes, maintains, and terminates connections.             | NetBIOS, RPC, PPTP                                  |
 | 6     | Presentation | Translates, encrypts, or compresses data for the application layer. Ensures correct data format.                   | SSL/TLS, JPEG, MPEG, ASCII                          |
-| 7     | Application  | Closest to the user — provides network services like web browsing, email, and file transfer.                       | HTTP, HTTPS, FTP, SMTP, DNS                         |
+| 7     | Application  | Closest to the user - provides network services like web browsing, email, and file transfer.                       | HTTP, HTTPS, FTP, SMTP, DNS                         |
 
 
 ## Key Concepts

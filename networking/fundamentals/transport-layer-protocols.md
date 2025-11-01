@@ -9,13 +9,13 @@ The two main protocols at this layer are TCP and UDP - each suited for different
 
 ## Transport Layer Overview
 
-| Feature           | TCP (Transmission Control Protocol)                                        | UDP (User Datagram Protocol)                                 |
-| --------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| Feature           | TCP (Transmission Control Protocol)                                            | UDP (User Datagram Protocol)                                     |
+| ----------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | Type              | Connection-oriented                                                            | Connectionless                                                   |
-| Reliability       | Reliable — ensures data is received correctly and in order                     | Unreliable — no guarantee of delivery or order                   |
-| Connection Setup  | Requires a 3-way handshake before data transfer                                | No handshake — data sent immediately                             |
-| Data Delivery     | Guarantees delivery using acknowledgments (ACKs) and retransmissions           | Best-effort delivery — lost packets are not retransmitted        |
-| Ordering          | Ensures packets arrive in sequence                                             | No ordering — packets may arrive out of order                    |
+| Reliability       | Reliable - ensures data is received correctly and in order                     | Unreliable - no guarantee of delivery or order                   |
+| Connection Setup  | Requires a 3-way handshake before data transfer                                | No handshake - data sent immediately                             |
+| Data Delivery     | Guarantees delivery using acknowledgments (ACKs) and retransmissions           | Best-effort delivery - lost packets are not retransmitted        |
+| Ordering          | Ensures packets arrive in sequence                                             | No ordering - packets may arrive out of order                    |
 | Flow Control      | Uses sliding window mechanism                                                  | No flow control                                                  |
 | Error Checking    | Uses checksums, sequence numbers, and ACKs                                     | Uses checksums only (no correction)                              |
 | Speed             | Slower due to reliability mechanisms                                           | Faster due to minimal overhead                                   |
@@ -61,14 +61,14 @@ UDP is simple and fast because it skips all the connection setup and reliability
 
 ## Quick Summary
 
-| Feature      | TCP | UDP |
-| ---------------- | ------- | ------- |
-| Reliable         | ✅       | ❌       |
-| Ordered          | ✅       | ❌       |
-| Error Correction | ✅       | ❌       |
-| Connection Setup | ✅       | ❌       |
-| Fast             | ❌       | ✅       |
-| Lightweight      | ❌       | ✅       |
+| Feature          | TCP | UDP |
+| ---------------- | --- | --- |
+| Reliable         | ✅   | ❌   |
+| Ordered          | ✅   | ❌   |
+| Error Correction | ✅   | ❌   |
+| Connection Setup | ✅   | ❌   |
+| Fast             | ❌   | ✅   |
+| Lightweight      | ❌   | ✅   |
 
 
 ## Sources

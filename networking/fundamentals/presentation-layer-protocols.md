@@ -4,7 +4,7 @@
 
 SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols that provide security for data transmitted over a network.
 
-TLS is the successor to SSL — SSL is now obsolete. TLS ensures that communication between two devices (like your browser and a web server) is:
+TLS is the successor to SSL - SSL is now obsolete. TLS ensures that communication between two devices (like your browser and a web server) is:
 
 - Encrypted (private)
 - Authenticated (trustworthy)
@@ -13,8 +13,8 @@ TLS is the successor to SSL — SSL is now obsolete. TLS ensures that communicat
 
 ## Key Security Features
 
-| Feature        | Description                                                                | Example                                         |
-| ------------------ | ------------------------------------------------------------------------------ | --------------------------------------------------- |
+| Feature        | Description                                                                    | Example                                             |
+| -------------- | ------------------------------------------------------------------------------ | --------------------------------------------------- |
 | Encryption     | Converts data into unreadable form so only authorized parties can read it.     | AES, ChaCha20                                       |
 | Authentication | Verifies the identity of the communicating parties using digital certificates. | X.509 Certificates, Public Key Infrastructure (PKI) |
 | Integrity      | Ensures that data is not altered during transmission.                          | Message Authentication Codes (MACs)                 |
@@ -27,7 +27,6 @@ Here’s a simplified step-by-step of what happens when your browser connects se
 1. Client Hello
 
 * The client (browser) sends:
-
   * Supported TLS versions (e.g., TLS 1.2, 1.3)
   * Supported cipher suites (encryption algorithms)
   * A random number (for key generation)
@@ -35,7 +34,6 @@ Here’s a simplified step-by-step of what happens when your browser connects se
 2. Server Hello
 
 * The server responds with:
-
   * Chosen TLS version and cipher suite
   * Its own random number
   * Its digital certificate (which includes its public key and domain identity, signed by a Certificate Authority)
@@ -48,7 +46,6 @@ Here’s a simplified step-by-step of what happens when your browser connects se
 4. Key Exchange
 
 * Depending on the TLS version and chosen cipher suite:
-
   * In older versions (TLS 1.2), a pre-master secret is sent encrypted with the server’s public key.
   * In TLS 1.3, both sides generate a shared key using Elliptic Curve Diffie-Hellman (ECDHE) — faster and more secure.
 

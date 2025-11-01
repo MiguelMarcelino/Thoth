@@ -23,6 +23,24 @@ Architecture that structures the application as a set of loosely coupled, collab
 | Resilience            | System should survive when one service fails.                    | Circuit breakers, retries.                                  |
 | Scalability           | You can scale individual services as needed.                     | Scale “Search Service” if it gets heavy traffic.            |
 
+## Microservices vs. Monolith
+Monoliths, microservices, and service meshes describe different architectures for how software systems are structured and communicate:
+
+- **Monolith:**
+    - All functionality (API, business logic, database access, etc.) lives in one deployable unit.
+    - Simple to develop and deploy at first, but hard to scale or modify as the codebase grows.
+- **Microservices:**
+    - Application is split into independent services, each handling a specific function and communicating over APIs (usually HTTP/gRPC).
+    - Easier to scale and maintain per service, but adds complexity in networking, deployment, and observability.
+- **Service Mesh:**
+    - A dedicated infrastructure layer that manages service-to-service communication in a microservices setup.
+    - Handles routing, retries, load balancing, encryption (mTLS), and observability without changing application code.
+    - Examples: Istio, Linkerd.
+
+In short:  
+Monolith = one big system,  
+Microservices = many small systems,  
+Service mesh = manages communication between many small systems.
 
 
 <hr>

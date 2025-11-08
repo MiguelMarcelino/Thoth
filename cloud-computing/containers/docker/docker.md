@@ -15,7 +15,7 @@ Docker is a containerization platform that packages applications and their depen
     
 - **Networking**  
 	- Docker creates virtual networks for container communication. We can configure networking using the following modes:
-		- bridge_: default, isolates containers but allows interconnection.
+		- _bridge_: default, isolates containers but allows interconnection.
 		- _host_: shares the host’s network stack.
 		- _overlay_: connects containers across multiple hosts (e.g., Swarm).
 - **Volumes** 

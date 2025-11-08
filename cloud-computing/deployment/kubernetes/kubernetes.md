@@ -37,7 +37,7 @@
 * Pods run on nodes, where a node can have multiple pods
 * Nodes run, at least:
 	* Kubelet: a process responsible for communication between the Kubernetes control plane and the Node (manages the Pods and the containers running on a machine).
-	* A container runtime: puls container image from a registry, unpacks it, and runs the application
+	* A container runtime: pulls container image from a registry, unpacks it, and runs the application
 
 ### Node Overview
 <div align="center">

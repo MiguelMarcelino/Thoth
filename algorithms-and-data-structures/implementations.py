@@ -363,3 +363,190 @@ def bfs(graph, node):
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append(neighbor)
+
+
+###########################################
+# Circular Buffer
+###########################################
+
+# The key aspect here is that we are not removing any items.
+# By keeping two pointers to track the start and end, we 
+# simply overwrite any values once we reach the buffer's max
+# capacity.
+
+class CircularBuffer:
+    def __init__(self, capacity):
+        self.buffer = [None] * capacity
+        self.capacity = capacity
+        self.start = 0
+        self.end = 0
+        self.size = 0
+    
+    def push(self, value):
+        self.buffer[self.end] = value
+        self.end = (self.end + 1) % self.capacity
+        if self.size < self.capwacity:
+            self.size += 1
+        else:
+            self.start = (self.start + 1) % self.capacity
+
+    def pop(self):
+        if self.size == 0:
+            raise IndexError("Buffer is empty")
+        
+        value = self.buffer[self.start]
+        self.start = (self.start + 1) % self.capacity
+        self.size -= 1
+        return value
+    
+    def __repr__(self):
+        items = []
+        for i in range(self.size):
+            idx = (self.start + i) % self.capacity
+            items.append(self.buffer[idx])
+        return f"CircularBuffer({items})"
+
+###########################################
+# Queue Implementation
+###########################################
+
+# Implement a queue, but you can only do it with 
+# arrays and pointers, no other solutions are accepted, 
+# even if the output is correct.
+
+class ArrayQueue:
+    def __init__(self, capacity):
+        self.data = [None] * capacity
+        self.capacity = capacity
+        self.front = 0
+        self.rear = 0
+        self.size = 0
+
+    def enqueue(self, value):
+        if self.size == self.capacity:
+            raise OverflowError("Queue is full")
+        self.data[self.rear] = value
+        self.rear = (self.rear + 1) % self.capacity
+        self.size += 1
+    
+    def dequeue(self):
+        if self.size == 0:
+            raise IndexError("Queue is empty")
+        value = self.data[self.front]
+        self.front = (self.front + 1) % self.capacity
+        self.size -= 1
+        return value
+    
+    def peek(self):
+        if self.size == 0:
+            raise IndexError("Queue is empty")
+        return self.data[self.front]
+        
+
+###########################################
+# In-memory Cache
+###########################################
+
+class InMemoryCache:
+    def __init__(self, ttl = 60):
+        self.store = {}
+        self.ttl = ttl
+
+    def set(self, key, value):
+        expiry = time.time() + self.ttl
+        self.store[key] = (value, expiry)
+
+    def get(self, key):
+        if key not in self.store:
+            return None
+        value, expiry = self.store[key]
+        if time.time() > expiry:
+            del self.store[key]
+            return None
+        return value
+    
+    def delete(self, key):
+        if key in self.store:
+            del self.store[key]
+
+    def cleanup(self):
+        now = time.time()
+        expired_keys = [k for k, (_, e) in self.store.items() if e < now]
+        for k in expired_keys:
+            del self.store[k]
+
+###########################################
+# Minimum Number of Partitions to Store Data
+###########################################
+
+def min_partitions(partitions, used_space):
+    partitions.sort(reverse = True)
+    used_space.sort(reverse = True)
+
+    i = j = 0
+    count = 0
+
+    while i < len(used_space) and j < len(partitions):
+        if partitions[j] >= used_space[i]:
+            count += 1
+            i += 1
+        j += 1
+
+    return count if i == len(used_space) else -1
+
+###########################################
+# Consisten Hashing Ring
+###########################################
+
+import hashlib
+import bisect
+
+class ConsistentHashing:
+    def __init__(self, replicas = 3):
+        self.replicas = replicas    # number of virtual nodes per server
+        self.ring = {}              # maps hash -> node
+        self.sorted_keys = []       # sorted list of hashes for quick lookup
+
+    def _hash(self, key):
+        return int(hashlib.md5(key.encode()).hexdigest(), 16)
+    
+    def add_node(self, node):
+        for i in range(self.replicas):
+            virtual_node_key = f"{node}#{i}"
+            key_hash = self._hash(virtual_node_key)
+            self.ring[key_hash] = node
+            bisect.insort(self.sorted_keys, key_hash)
+
+    def remove_node(self, node):
+        for i in range(self.replicas):
+            virtual_node_key = f"{node}#{i}"
+            key_hash = self._hash(virtual_node_key)
+            if key_hash in self.ring:
+                del self.ring[key_hash]
+                self.sorted_keys.remove(key_hash)
+
+    def get_node(self, key):
+        if not self.ring:
+            return None
+        key_hash = self._hash(key)
+        # find first node clockwise in the ring
+        idx = bisect.bisect(self.sorted_keys, key_hash) % len(self.sorted_keys)
+        return self.ring[self.sorted_keys[idx]]
+
+###########################################
+# Sub-array sum equals k
+###########################################
+
+def subarray_sum(nums, k):
+    count = 0
+    prefix_sum = 0
+    sum_dict = {0: 1} # prefix_sum -> frequency
+
+    for num in nums:
+        prefix_sum += num
+        if prefix_sum - k in sum_dict:
+            count += sum_dict[prefix_sum - k]
+        sum_dict[prefix_sum] = sum_dict.get(prefix_sum, 0) + 1
+
+    return count
+

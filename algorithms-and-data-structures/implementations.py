@@ -71,6 +71,7 @@ class LRUCache:
         node.prev = self.head
         self.head.next.prev = node
         self.head.next = node
+
     def get(self, key: int) -> int:
         if key not in self.cache:
             return -1
@@ -233,6 +234,7 @@ def mergeKLists(lists):
 
 # Problem:
 # Given an array nums and a window size k, return an array of the maximum values in each sliding window of size k.
+
 from collections import deque
 
 def maxSlidingWindow(nums, k):
@@ -385,7 +387,7 @@ class CircularBuffer:
     def push(self, value):
         self.buffer[self.end] = value
         self.end = (self.end + 1) % self.capacity
-        if self.size < self.capwacity:
+        if self.size < self.capacity:
             self.size += 1
         else:
             self.start = (self.start + 1) % self.capacity
